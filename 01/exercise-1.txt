@@ -1,0 +1,77 @@
+1. How to submit jobs in SLURM, how to check their state and how to cancel them?
+
+- To submit jobs in SLURM, the `sbatch` command is used. This command submits a script that contains SLURM directives and the commands to execute.
+
+- To check the state of submitted jobs, the `squeue` command is used. It lists the current jobs queued or running in the system.
+
+- To cancel a job, the `scancel` command is used along with the job ID that needs to be cancelled.
+
+2. Prepare a submission script that starts an arbitrary executable, e.g. /bin/hostname.
+
+- Create a submission script named `test_script.sh` to sleep for 30 seconds.
+
+```
+#!/bin/bash
+
+# Execute job in the partition "lva" unless you have special requirements.
+#SBATCH --partition=lva
+# Name your job to be able to identify it later
+#SBATCH --job-name test
+# Redirect output stream to this file
+#SBATCH --output=output.log
+# Maximum number of tasks (=processes) to start in total
+#SBATCH --ntasks=1
+# Maximum number of tasks (=processes) to start per node
+#SBATCH --ntasks-per-node=1
+# Enforce exclusive node allocation, do not share with other jobs
+#SBATCH --exclusive
+
+# Commands to execute
+echo "Hello, this is a test job!"
+echo "Sleeping for 30 seconds..."
+sleep 30
+echo "Test job completed successfully!"
+```
+
+- To submit this script, use: `sbatch test_script.sh`
+
+3. What are the 5 most important parameters available when submitting a job and why? What are possible settings of these parameters, and what effect do they have?
+
+- See at the Command/option Summary available at https://slurm.schedmd.com/pdfs/summary.pdf for a brief overview of all parameters.
+
+- `--job-name`: Assigns a descriptive name for easy job identification and management, simplifying the monitoring and organization of multiple jobs.
+
+- `--partition`: Selects the partition where the job will run, affecting access to different types of nodes and, consequently, job performance and wait times.
+
+- `--time`: Limits job run time to prevent resource monopolization, ensuring fair access to system resources by terminating the job if it exceeds this limit.
+
+- `--nodes`: Specifies the number of nodes required for the job, critical for parallel jobs to enhance performance by distributing the workload across multiple nodes.
+
+- `--ntasks-per-node` or `--cpus-per-task`: Adjusts parallelism by setting tasks per node or CPUs per task, optimizing workload distribution and resource use.
+
+4. How do you run your program in parallel? What environment setup is required?
+
+- Determine the parallel computing model your program will use there are two main models are:
+	- MPI (Message Passing Interface): For distributed computing, where tasks run on multiple nodes and communicate via passing messages.
+	- OpenMP (Open Multi-Processing): For shared-memory parallelism, where tasks run on multiple cores of the same node, sharing the same memory space.
+
+- Preparing Your Environment:
+	-Ensure your computing environment is ready for parallel execution. Load any necessary modules and use parallel compilers or compiler flags that are specific to parallel programming.
+
+- Writing Your Program:
+	- Write your program using the appropriate syntax and functions for the chosen parallel computing model.
+	- For MPI, include MPI initialization, communication, and finalization commands.
+	- For OpenMP, use pragmas to denote parallel regions and manage threads.
+
+- Compiling Your Program:
+	- Compile your program with the relevant compiler.
+
+- Creating a SLURM Script:
+	- Write a SLURM script to submit your job. This script includes SLURM directives and the command to execute your program.
+
+- Submitting Your Job:
+	- Submit your SLURM script using the `sbatch` command.
+
+- Monitoring and Managing Your Job
+	- Use `squeue` to check the status of your job.
+	- Use `scancel` followed by your job ID to cancel a job if necessary.
