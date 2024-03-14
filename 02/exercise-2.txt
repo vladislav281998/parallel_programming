@@ -1,0 +1,38 @@
+How is the speedup of a parallel program defined?
+"The speedup of a parallel algorithm over a corresponding sequential algorithm is the ratio of the compute time for the sequential algorithm to the time for the parallel algorithm. If the speedup factor is n, then we say we have n-fold speedup." (https://www.stolaf.edu/people/rab/pdc/text/alg.htm#:~:text=The%20speedup%20of%20a%20parallel,we%20have%20n%2Dfold%20speedup.)
+
+What is the formal definition of Amdahl's law and what relationship does it describe for parallel programs (explain in your own words)? Why/How is this significant?
+Amdahl's law provides a way to calculate the maximum improvement in speed a program can get from using multiple processors. The formula, 
+
+S = p / (1 + (p - 1) / f)
+
+tells us the speedup S that can be achieved by using p processors, where f is the portion of the program that must run serially. Essentially, it shows that the speedup of a program is limited by its non-parallelizable parts. Adding more processors only improves performance up to a point, based on how much of the program can run in parallel. This principle is important because it highlights the inherent limitations of parallel computing and the critical role of the program's structure in achieving performance gains.
+
+Compute the theoretical speedup of a program that spends 10% of its time in unparallelizable, sequential regions for 6 cores and for a hypothetically unlimited number of cores?
+-Six Cores:
+	S = 6 / (1 + (6 - 1) * 0.1) = 6 / 1.5 = 4
+
+-Unlimited Cores:
+	S = 1 / (0.1 + (1 - 0.1) / ∞) = 1 / (0.1 + 0) = 10
+
+Compute the theoretical speedup of a program that spends 20% of its time in unparallelizable, sequential regions for 6 cores and for a hypothetically unlimited number of cores?
+Six Cores:
+	S = 6 / (1 + (6 - 1) * 0.2) = 6 / 2 = 3
+
+Unlimited Cores:
+	S = 1 / (0.2 + (1 - 0.2) / ∞) = 1 / (0.2 + 0) = 5
+
+Given an algorithm of time complexity O(n^3). How large (in %) can the unparallelizable, sequential region be at most, such that a speedup of 10 can be achieved using 64 cores?
+-To find the maximum size of the unparallelizable region (x), we set the speedup S(x) to 10 for 64 cores:
+	S(x) = 64 / (1 + 63 * x) = 10
+
+-Solve for x:
+	10 = 64 / (1 + 63 * x)
+	=> 1 + 63 * x = 64 / 10
+	=> 1 + 63 * x = 6.4
+	=> 63 * x = 6.4 - 1
+	=> 63 * x = 5.4
+	=> x = 5.4 / 63
+	=> x = 0.0857
+
+-Thus, the unparallelizable, sequential region can be up to approximately 8.57%.

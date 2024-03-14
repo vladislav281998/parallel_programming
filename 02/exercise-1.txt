@@ -1,0 +1,57 @@
+Information from lstopo?
+
+Machine: 
+- Represents the entire system with a total memory of 62GB.
+
+Package L#0 and Package L#1: 
+- These are CPU sockets, each containing a physical CPU package, indicating there are 2 physical CPUs.
+
+Cores and PUs (Processing Units): 
+- The system's cores are split across the two packages, with physical and logical core identifiers provided. Each package lists multiple cores (Core L#0 to Core L#5 in the first package and Core L#6 to Core L#11 in the second package), totaling 12 cores across both CPUs. Additionally, each core is capable of handling two processing threads (as indicated by the PU (Processing Unit) entries, e.g., PU L#0 and PU L#1 within Core L#0), suggesting the presence of Hyper-Threading or a similar technology, doubling the logical cores to 24.
+
+NUMANode L#0 P#0 and NUMANode L#1 P#1: 
+- Represent Non-Uniform Memory Access (NUMA) nodes, each with 31GB of memory. Each NUMANode (NUMANode L#0 and NUMANode L#1) is associated with 31GB of memory, totaling 62GB of RAM for the machine.
+- A NUMANode represents a set of CPU cores and memory that are physically closer to each other, optimizing the speed at which these cores can access the memory. NUMA (Non-Uniform Memory Access) architecture aims to maximize memory access speed by taking the physical location of memory into account.
+-The presence of two NUMANodes suggests that the system is built on a NUMA architecture, with each node representing a grouping of cores around a local memory bank. This design is typical in multi-socket systems to improve memory access speeds for the cores directly connected to a given NUMANode.
+
+Interesting Cache Information:
+	L3 Cache: 
+	- Each NUMA node has an L3 cache of 12MB, shared among cores in the package. 
+	-The shared 12MB L3 cache per CPU package helps reduce data access latency for the cores by storing frequently accessed data closer to the CPU.
+
+	L2 Cache: 
+	- 256KB L2 caches are present for cores, indicating a hierarchy in cache levels for efficient data access.
+	- The private 256KB L2 cache for each core further minimizes latency for high-priority data specific to each core's processes.
+
+	L1d and L1i Caches: 
+	- 32KB L1 data and instruction caches for cores.
+	-The split between 32KB L1 data and 32KB L1 instruction caches for each core ensures that both data and instructions that a core needs are rapidly accessible, enhancing execution speed.
+
+I/O Devices and Storage: 
+-Multiple network interfaces are listed, indicating a variety of connectivity options for the system:
+  - Net eno1 and Net eno2 likely represent onboard Ethernet interfaces.
+  - Net ib0 and OpenFabrics mlx4_0 suggest the presence of high-speed networking capabilities, possibly InfiniBand, which is common in high-performance computing environments for its low latency and high throughput.
+  - Net enp25s0f0 and Net enp25s0f1 could be additional Ethernet ports, potentially from a PCIe network card given their naming convention which includes the bus, slot, and function numbers.
+- Block Storage: The Block sda (135 GB) entry indicates a storage device, likely an SSD or HDD, with a capacity of 135GB. This storage device is critical for the operating system, applications, and potentially for data that requires fast access times.
+
+PCI Devices:
+- The system includes several PCI devices, identified by their bus addresses (e.g., PCI 0b:00.0, PCI 10:00.0, etc.). These entries not only include the network interfaces and storage mentioned above but also other devices not detailed in the visible output. These could include GPUs, additional storage controllers, or other types of expansion cards, which can significantly enhance the system's capabilities.
+
+The system has 12 cores across two CPU packages, with each core capable of handling two processing threads due to Hyper-Threading. This means you could utilize a maximum of 24 threads when parallelizing a program with OpenMP on this system.
+
+
+Does the output from lstopo match the information from the website?
+
+| Feature                | lstopo Output             | Website Description                       |
+|------------------------|---------------------------|-------------------------------------------|
+| CPU Type               | Not explicitly stated     | 2 Intel six-core Xeon X5650 CPUs          |
+| Total Cores            | 12 cores                  | 12 cores (2 CPUs x 6 cores each)          |
+| Hyper-Threading        | Implied (24 threads)      | Not mentioned (but likely, given the CPU) |
+| Total RAM              | 62 GB                     | 24 GB DDR3 ECC RAM                        |
+| Memory per Core        | Not directly applicable   | 2 GB per core                             |
+| Network Interfaces     | InfiniBand, Ethernet      | Single-Port 4x QDR Infiniband PCIe 2.0 HCA|
+| Storage                | 135 GB block storage      | 250 GB SATA2 hard disk                    |
+| Additional PCI Devices | Various, including storage| Not specified                             |
+| GPU                    | Not mentioned             | GPUs in 3 nodes: 2 NVidia Tesla M2090     |
+ 
+ -> The differences in RAM and storage suggest that the system has been upgraded.
