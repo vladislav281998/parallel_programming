@@ -1,0 +1,12 @@
+Mandelbrot Calculation    |    Value
+------------------------------------
+Calculation 1              |  17.786372
+Calculation 2              |  17.711051
+Calculation 3              |  17.709644
+Calculation 4              |  17.785231
+Calculation 5              |  17.711088
+Calculation 6              |  17.719842
+Calculation 7              |  17.709385
+Calculation 8              |  17.768635
+Calculation 9              |  17.734835
+Calculation 10             |  17.714233
