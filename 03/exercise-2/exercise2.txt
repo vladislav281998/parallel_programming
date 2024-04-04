@@ -1,0 +1,22 @@
+First implementation (Column-major order)
+
+f(n, s) = 3n²
+
+In this implementation the elements are accessed column by column. In memory they are stored in row-major order. 
+This means that for every element accessed it is not contiguous with the previous one.
+Therefor it is likely that every element accessed results in a cache miss.
+
+Second implementation (Row-major order)
+
+f(n, s) = 3n²/s
+
+Here the elements are accessed row by row, thus every element accessed is contiguous with the previous one. 
+Once a cache miss occurs the next s elements can be accessed without any cache misses.
+
+Comparing results:
+Both cachegrind and perf support the notion that the second implementation produces considerably fewer cache misses. 
+When analyzing cachegrind we see that there are more cache misses than we calculated. This is because of cache misses generated outside of our loops, 
+for example in the matrix initialization. 
+Perf reports less LLC misses than cachegrind for both implementations. 
+While perf measures actual hardware evenets, cachegrind only simulates how the program would interact with a model of the cache.
+Furthermore, cachegrind does not utilize prefetching which could positively impact cache misses.
