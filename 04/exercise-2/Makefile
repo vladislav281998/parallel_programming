@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -Wpedantic -Werror -std=c17 -O3 -march=native -g
+CFLAGS=-Wall -Wextra -Wpedantic -Werror -std=c17 -g
 LDFLAGS=-lpthread
 
 TARGETS=monte_carlo_pi_v1 monte_carlo_pi_v2 monte_carlo_pi_v3
