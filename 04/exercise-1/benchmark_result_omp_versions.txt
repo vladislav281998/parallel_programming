@@ -1,0 +1,24 @@
+Atomic
+Approximation of PI took 17.494 seconds with 1 threads - value: 3.1416413086
+Approximation of PI took 18.176 seconds with 2 threads - value: 3.1416412971
+Approximation of PI took 11.619 seconds with 4 threads - value: 3.1416413029
+Approximation of PI took 25.220 seconds with 6 threads - value: 3.1416412971
+Approximation of PI took 18.145 seconds with 12 threads - value: 3.1416413371
+Reduction
+Approximation of PI took 0.659 seconds with 1 threads - value: 3.1416413086
+Approximation of PI took 0.617 seconds with 2 threads - value: 3.1416412971
+Approximation of PI took 0.602 seconds with 4 threads - value: 3.1416413029
+Approximation of PI took 0.588 seconds with 6 threads - value: 3.1416412971
+Approximation of PI took 0.580 seconds with 12 threads - value: 3.1416413371
+Critical
+Approximation of PI took  14.127 seconds with 1 threads - value: 3.1415790800
+Approximation of PI took  43.793 seconds with 2 threads - value: 3.1415909829
+Approximation of PI took  98.678 seconds with 4 threads - value: 3.1415605314
+Approximation of PI took  149.795 seconds with 6 threads - value: 3.1415958800
+Approximation of PI took  317.500 seconds with 12 threads - value: 3.1415694114
+Pthreads
+Approximation of PI took 10.932 seconds with 1 threads - value: 3.1415790800
+Approximation of PI took 5.497 seconds with 2 threads - value: 3.1415909829
+Approximation of PI took 2.770 seconds with 4 threads - value: 3.1415605314
+Approximation of PI took 1.914 seconds with 6 threads - value: 3.1415958743
+Approximation of PI took 0.972 seconds with 12 threads - value: 3.1415694114

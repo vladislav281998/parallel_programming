@@ -1,0 +1,64 @@
+Atomic
+Nuber of Threads: 1
+	User time (seconds): 438.37
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.45
+Nuber of Threads: 2
+	User time (seconds): 431.27
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.21
+Nuber of Threads: 4
+	User time (seconds): 431.24
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.35
+Nuber of Threads: 6
+	User time (seconds): 429.44
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.14
+Nuber of Threads: 12
+	User time (seconds): 383.28
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.85
+Pthreads
+Nuber of Threads: 1
+	User time (seconds): 10.82
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.84
+Nuber of Threads: 2
+	User time (seconds): 10.83
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.43
+Nuber of Threads: 4
+	User time (seconds): 10.90
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.74
+Nuber of Threads: 6
+	User time (seconds): 11.30
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.89
+Nuber of Threads: 12
+	User time (seconds): 11.61
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.04
+Reduction
+Nuber of Threads: 1
+	User time (seconds): 15.69
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.67
+Nuber of Threads: 2
+	User time (seconds): 14.69
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.65
+Nuber of Threads: 4
+	User time (seconds): 14.23
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.60
+Nuber of Threads: 6
+	User time (seconds): 13.97
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.59
+Nuber of Threads: 12
+	User time (seconds): 13.77
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.58
+Critical
+Nuber of Threads: 1
+	User time (seconds): 14.26
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:14.29
+Nuber of Threads: 2
+	User time (seconds): 85.45
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:42.85
+Nuber of Threads: 4
+	User time (seconds): 412.00
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:44.60
+Nuber of Threads: 6
+	User time (seconds): 853.36
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:25.37
+Nuber of Threads: 12
+	User time (seconds): 2009.59
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:55.99

@@ -18,7 +18,7 @@ struct MonteCarloPiInput {
 };
 
 static void* monte_carlo_pi(void* arg);
-static timepoint_t time_ns();
+static timepoint_t time_ns(void);
 static double elapsed_seconds(timepoint_t start, timepoint_t end);
 
 int main(int argc, char** argv) {
@@ -110,7 +110,7 @@ static void* monte_carlo_pi(void* arg) {
     return (void*) points_in_cricle;
 }
 
-static timepoint_t time_ns() {
+static timepoint_t time_ns(void) {
     // Note: We assume that all time information fits into an uint64_t
     struct timespec now;
     clock_gettime(CLOCK_MONOTONIC, &now);
@@ -120,3 +120,4 @@ static timepoint_t time_ns() {
 static double elapsed_seconds(timepoint_t start, timepoint_t end) {
     return ((start > end) ? start - end : end - start) / 1E9;
 }
+

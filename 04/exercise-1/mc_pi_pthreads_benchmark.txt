@@ -1,0 +1,5 @@
+Approximation of PI took 10.932 seconds with 1 threads - value: 3.1415790800
+Approximation of PI took 5.497 seconds with 2 threads - value: 3.1415909829
+Approximation of PI took 2.770 seconds with 4 threads - value: 3.1415605314
+Approximation of PI took 1.914 seconds with 6 threads - value: 3.1415958743
+Approximation of PI took 0.972 seconds with 12 threads - value: 3.1415694114
