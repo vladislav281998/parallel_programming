@@ -1,0 +1,24 @@
+1. Benchmark it with 1, 2, 4, 6, and 12 threads on LCC3. What can you observe?
+As the number of threads increases from 1 to 12, the time taken to approximate the number pi generally decreases. This indicates that parallelization is effective in reducing computation time. However, the reduction in time is not absolutely linear. While there is a significant decrease in time when moving from 1 to 2 threads, the acceleration decreases as more threads are added. For example, the time reduction from 2 to 4 threads is not as significant as from 1 to 2 threads. The fastest time is achieved with 12 threads, but the acceleration compared to the single-threaded case is not as great as expected. This suggests that there may be diminishing returns or overhead costs associated with managing more threads. The values of the number pi obtained with different numbers of threads are close to each other, indicating that parallelization does not significantly affect the accuracy of the approximation.
+
+For further analysis and optimization of the implementation based on pthreads, the following actions can be considered:
+-Investigate potential bottlenecks or inefficiencies in the parallelization scheme, such as load imbalance or excessive synchronization.
+-Experiment with different numbers of threads and load distribution to achieve better scalability.
+-Profile the code to identify areas needing optimization, such as hotspots or memory access patterns.
+-Consider alternative approaches to parallelization or optimization, such as task parallelism or vectorization, depending on the characteristics of the problem and the target architecture.
+
+4. Benchmark your OpenMP implementations with the same number of threads using OpenMP's time measurement function. What can you observe? How do those results compare to your earlier measurements?
+The increase in pthreads shows a clear trend of decreasing execution time as the number of threads increases. While for the implementations for Atomic, Reduction and Critical there is no general clear trend for a reduction in execution time for an increase in number of threads:
+-The Reduction implementation performs as expected, showing a clear benefit from parallelism. 
+-The Critical and Atomic implementations likely have higher overhead due to synchronization mechanisms that prevent data races, thus their performance does not improve. This overhead appears to become a bottleneck, particularly for the Critical implementation.
+
+The Reduction and Pthreads method seems to offer the best performance, which matches the expected performance that showed improved performance with an increased number of threads. The Atomic and Critical methods do not scale as well, likely due to synchronization overhead.
+
+5. Take a look at the output, specifically "user time" and "elapsed (wall clock) time". How do they differ? Does either of them match the time measurement function of OpenMP?
+User Time:
+-This is the total amount of CPU time used directly by the process. In a multithreaded context, this includes time consumed by all threads.
+
+Elapsed (Wall Clock) Time:
+-This measures the real duration from start to finish of the program execution as would be measured by a clock. It is affected by the scheduling of processes by the operating system, waiting for I/O operations, or other applications running on the system using up CPU time.
+
+OpenMP typically uses elapsed (wall clock) time for its internal timing functions (e.g., `omp_get_wtime()`). This measures the total time taken to execute the parallel region of the code. thus the wall clock time roughly matches the the measured times from the task four.
