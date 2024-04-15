@@ -1,0 +1,16 @@
+Version 1 (Private Variable):
+- Each thread accumulates its count in a thread-private variable.
+- Uses atomic operations to update a shared sum after all personal counting is done.
+- Shows very low cache miss rates (0.01%) indicating that private variables effectively prevent cache contention.
+- Elapsed time and CPU usage suggest decent efficiency but not the best among the three.
+
+Version 2 (Shared Array Without Padding):
+- A single shared array where each thread writes to a specific index without any padding to prevent false sharing.
+- This version shows a significantly higher cache miss rate (3.16%), which can be attributed to cache line contention (false sharing).
+- It has the highest user time, which likely results from threads waiting due to cache line invalidation caused by other threads updating nearby data.
+
+Version 3 (Shared Array With Padding):
+- Similar to Version 2 but includes padding to prevent false sharing.
+- Padding size is typically equal to the cache line size, commonly 64 bytes, to ensure that each thread's local sum resides in a separate cache line.
+- This version shows an extremely low cache miss rate (0.00%) and the lowest elapsed time, which strongly suggests that the padding effectively eliminates false sharing and optimizes parallel performance.
+
