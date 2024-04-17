@@ -5,7 +5,7 @@
 #SBATCH --cpus-per-task=12
 #SBATCH --time=01:00:00
 
-module load gcc/9.2.0   # Modify as needed to load the correct gcc module available on LCC3
+module load gcc
 
 # Define the compiler flags
 CFLAGS="-std=gnu11 -Wall -Wextra -lm -fopenmp"
