@@ -1,134 +1,25 @@
-Implement the suggested additions to the code below to improve its performance. also highlight in the code where you made the change with an comment:
+Improvements in the C Code:
 
-The provided code can be enhanced for better performance by eliminating unnecessary parallel regions, utilizing more advanced matrix multiplication strategies, addressing false sharing concerns, and optimizing memory management.
+1. Memory Allocation Improvements
+   a. Contiguous Memory Allocation for Arrays:
+      - INIT_ARRAY macro redefined to allocate a single contiguous block of memory for each matrix (a, b, and c).
+      - Reduces malloc calls from n+1 to 1 per matrix, improving cache locality and performance.
 
-1. Redundant Parallel Regions:
-   - The program includes two nested `#pragma omp parallel` directives, which can lead to excessive overhead.
-   - Combining the tasks of matrix multiplication and summing matrix 'c' into a single parallel region could streamline execution.
-   - The additional `#pragma omp parallel for` used for summing matrix 'c' is redundant as it falls within an existing parallel region and could be merged.
+   b. Initialization of Matrix Elements:
+      - Matrix elements are initialized to zero within the INIT_ARRAY macro using nested loops.
 
-2. Matrix Multiplication Efficiency:
-   - Currently, the matrix multiplication is performed using a basic triple nested loop approach, which is inefficient regarding cache utilization.
-   - Implementing an advanced algorithm, such as divide-and-conquer, can significantly boost performance by improving cache efficiency.
+2. Function Simplification
+   a. Simplified free_2d_array Function:
+      - Directly frees the memory block allocated for the matrices, reflecting the new allocation strategy and reducing complexity.
 
-3. Avoiding False Sharing:
-   - The `local_res` array is accessed by multiple threads where each thread writes to a specific index determined by `omp_get_thread_num()`. This setup can cause false sharing if multiple indices reside on the same cache line.
-   - To prevent this, consider using the `#pragma omp parallel for reduction(+:res)` to handle result accumulation, which inherently avoids false sharing issues.
+3. Computational Optimizations
+   a. Loop Reordering for Improved Cache Efficiency:
+      - Order of loops changed (j, i, k instead of i, j, k) to enhance spatial locality and reduce cache misses.
 
-#include <errno.h>
-#include <omp.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+   b. Use of Linear Indexing:
+      - Matrix operations use linear indexing (i * n + j) to simplify index calculations and align with single-block memory layout.
 
-#define PERROR fprintf(stderr, "%s:%d: error: %s\n", __FILE__, __LINE__, strerror(errno))
-#define PERROR_GOTO(label) \
-	do { \
-		PERROR; \
-		goto label; \
-	} while (0)
-
-#define INIT_ARRAY(arr, label) \
-	do { \
-		if (!(arr)) PERROR_GOTO(label); \
-		for (long i = 0; i < n; ++i) { \
-			(arr)[i] = malloc(sizeof(**(arr)) * n); \
-			if (!(arr)[i]) PERROR_GOTO(label); \
-		} \
-	} while (0)
-
-void free_2d_array(int **arr, long len) {
-	if (!arr) {
-		return;
-	}
-	for (long i = 0; i < len; ++i) {
-		if (!arr[i]) {
-			break;
-		}
-		free(arr[i]);
-	}
-	free(arr);
-}
-
-int main(int argc, char **argv) {
-	// handle input
-	if (argc != 2) {
-		fprintf(stderr, "Error: usage: %s <n>\n", argv[0]);
-		return EXIT_FAILURE;
-	}
-	errno = 0;
-	char *str = argv[1];
-	char *endptr;
-	long n = strtol(str, &endptr, 0);
-	if (errno != 0) {
-		perror("strtol");
-		return EXIT_FAILURE;
-	}
-	if (endptr == str) {
-		fprintf(stderr, "Error: no digits were found!\n");
-		return EXIT_FAILURE;
-	}
-	if (n < 0) {
-		fprintf(stderr, "Error: matrix size must not be negative!\n");
-		return EXIT_FAILURE;
-	}
-
-	// allocate memory
-	int status = EXIT_FAILURE;
-	int **a = malloc(sizeof(*a) * n);
-	INIT_ARRAY(a, error_a);
-	int **b = malloc(sizeof(*b) * n);
-	INIT_ARRAY(b, error_b);
-	int **c = malloc(sizeof(*c) * n);
-	INIT_ARRAY(c, error_c);
-    unsigned *local_res = malloc(omp_get_max_threads() * sizeof(*local_res));
-    if (!local_res) PERROR_GOTO(error_c);
-    status = EXIT_SUCCESS;
-
-	// fill matrix
-	srand(7);
-	for (long i = 0; i < n; ++i) {
-		for (long j = 0; j < n; ++j) {
-			a[i][j] = rand();
-			b[i][j] = rand();
-		}
-	}
-
-	double start_time = omp_get_wtime();
-#pragma omp parallel default(none) shared(n, a, b, c, local_res)
-	{
-		// matrix multiplication
-#pragma omp parallel for default(none) shared(n, a, b, c)
-		for (long i = 0; i < n; ++i) {
-			for (long j = 0; j < n; ++j) {
-				for (long k = 0; k < n; ++k) {
-					c[i][j] += a[i][k] * b[k][j];
-				}
-			}
-		}
-
-		// sum of matrix c
-#pragma omp parallel for default(none) shared(n, a, b, c, local_res)
-		for (long i = 0; i < n; ++i) {
-			for (long j = 0; j < n; ++j) {
-				local_res[omp_get_thread_num()] += c[i][j];
-			}
-		}
-	}
-	unsigned long res = 0;
-	for (int l = 0; l < omp_get_num_threads(); ++l) {
-		res += local_res[l];
-	}
-	double end_time = omp_get_wtime();
-	printf("res: %lu, time: %2.2f seconds\n", res, end_time - start_time);
-
-	// cleanup
-	free(local_res);
-error_c:
-	free_2d_array(c, n);
-error_b:
-	free_2d_array(b, n);
-error_a:
-	free_2d_array(a, n);
-	return status;
-}
+4. Parallelism Adjustments
+   a. Optimized OpenMP Directives:
+      - Replaced inner #pragma omp parallel for with #pragma omp for to avoid nested parallel regions.
+      - Specified schedule(static) to improve workload distribution across threads.

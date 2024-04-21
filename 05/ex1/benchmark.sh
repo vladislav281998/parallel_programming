@@ -8,7 +8,7 @@
 module load gcc
 
 # Define the compiler flags
-CFLAGS="-std=gnu11 -Wall -Wextra -lm -fopenmp"
+CFLAGS="-std=gnu11 -Wall -Wextra -lm -fopenmp -O3"
 
 # Compile the original and improved programs
 gcc $CFLAGS ex1.c -o ex1
