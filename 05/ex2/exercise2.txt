@@ -1,0 +1,23 @@
+1. A variable data is declared and initialized to 0.
+Another variable flag is declared and initialized to 0.
+Using #pragma omp parallel num_threads(2), a parallel scope is entered indicating that the following block of code is being executed by two threads in parallel.
+Within the parallel range, the code checks the thread number with omp_get_thread_num(). If the thread number is 0, data is set to 42 and flag is set to 1.
+If the thread number is 1, a loop is entered in which the value of flag is repeatedly checked until it becomes 1. This loop ensures that the second thread waits until the first thread sets flag to 1.
+As soon as flag reaches the value 1, the second thread outputs the values of the variables flag and data once.
+
+2. Compile this code with optimization level -O3. Run it in an interactive job (e.g. using salloc --exclusive --tasks-per-node=1 --cpus-per-task=1 srun --pty bash) 
+in a loop many times (e.g. write a loop in bash that executes it 1000 times). Run this loop repeatedly. What can you observe?
+
+In most cases, thread number 2 gets into a loop and tries to read the old variable 0 until thread number 1 transfers the new variable from the cache to shared memory.
+
+
+3.Thread 0 executes data = 42 and attempts to write 1 to flag 
+Critical Section: However, there's a window of opportunity between the write and the next memory ordering point for thread 1 to intervene.
+Thread 1 might read the old value of flag (still 0) before the write from thread 0 is complete.
+Due to this, thread 1 enters the busy loop and keeps checking flag.
+
+Why atomic write and flush are insufficient:
+
+atomic write ensures the write operation itself is atomic (indivisible) but doesn't guarantee immediate visibility of the new value to other threads.
+flush directive instructs the processor to write the updated value of a variable to its cache and potentially further out to main memory. 
+This helps synchronize memory views, but it doesn't guarantee the exact order with respect to other memory operations
