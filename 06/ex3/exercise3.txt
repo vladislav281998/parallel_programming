@@ -1,0 +1,11 @@
+2.) Here in the loop, i + 2 and j - 1 use the values of variables i and j from the outer and inner loops respectively.
+
+This means that each element a[i + 2][j - 1] is overwritten in every iteration of the inner loop, 
+but with different values of variables i and j.
+
+Thus, in this code snippet, there is a data dependence present, known as a data dependence, 
+because the value of elements of array a depends on the values of other elements of the same array.
+
+3.) In this case, the inner loop cannot be parallelized because each iteration of the inner loop depends on the previous 
+iteration due to the use of elements of the array a. To enable parallel execution, 
+it might be necessary to introduce an additional variable to avoid this dependency.
