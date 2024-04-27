@@ -1,0 +1,13 @@
+Code Snippet 1:
+-There is a read-after-write (RAW) dependency on the x array. The value of x[i] depends on the value of x[i+1] from the previous iteration.
+-There is a read-only dependency on the y array. The value of y[i] is read in each iteration but not modified.
+
+Code Snippet 2:
+-There are no dependencies between iterations of the loop, as each iteration reads from x[i] and y[i] and writes to z[i] independently.
+-The variable a is used within the loop but not carried across iterations, so it can be safely declared as a private variable in the optimized code.
+-The variable f is computed after the loop and depends on the last value of a, but it does not affect the parallelization of the loop.
+
+Code Snippet 3:
+-In the first loop, there are no dependencies between iterations, as each iteration reads from y[i] and writes to x[i] independently.
+-In the second loop, there is a read-after-write (RAW) dependency between the two loops, as the second loop reads the values of x[i] that were written in the first loop. However, since the loops are executed sequentially, this dependency is naturally resolved.
+-Within each loop, there are no dependencies between iterations, as each iteration reads from x[i] and writes to y[i] independently.
