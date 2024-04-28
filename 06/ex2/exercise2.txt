@@ -1,0 +1,14 @@
+Code Snippet 1:
+
+There is a RAW dependency because the value of factor depends on the previous iteration of the loop.
+There is also an anti dependency since factor is used and then later updated.
+
+Code Snippet 2:
+
+Again there is a RAW dependency, x[i] depends on the value of y[i-1] calculated in the previous iteration.
+Both x[i] and y[i] are read and then written to, which is are anti dependencies.
+
+Code Snippet 3:
+
+True dependencies on x[í-1] since it depends on x[i-1] calculated in the previous iteration
+Anti dependencies on x[i] and x[i-1]
