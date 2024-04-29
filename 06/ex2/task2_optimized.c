@@ -46,6 +46,6 @@ int main() {
     // Free dynamically allocated memory
     free(x);
     free(y);
-
+    free(z);
     return 0;
 }
