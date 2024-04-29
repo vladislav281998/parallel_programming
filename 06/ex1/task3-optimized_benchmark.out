@@ -1,0 +1,250 @@
+Run 1: Running task3-optimized with 1 threads
+
+real	0m5.671s
+user	0m4.447s
+sys	0m1.190s
+Run 2: Running task3-optimized with 1 threads
+
+real	0m5.666s
+user	0m4.461s
+sys	0m1.177s
+Run 3: Running task3-optimized with 1 threads
+
+real	0m5.664s
+user	0m4.463s
+sys	0m1.173s
+Run 4: Running task3-optimized with 1 threads
+
+real	0m5.666s
+user	0m4.443s
+sys	0m1.196s
+Run 5: Running task3-optimized with 1 threads
+
+real	0m5.663s
+user	0m4.447s
+sys	0m1.189s
+Run 6: Running task3-optimized with 1 threads
+
+real	0m5.674s
+user	0m4.465s
+sys	0m1.177s
+Run 7: Running task3-optimized with 1 threads
+
+real	0m5.665s
+user	0m4.456s
+sys	0m1.182s
+Run 8: Running task3-optimized with 1 threads
+
+real	0m5.669s
+user	0m4.473s
+sys	0m1.169s
+Run 9: Running task3-optimized with 1 threads
+
+real	0m5.674s
+user	0m4.474s
+sys	0m1.175s
+Run 10: Running task3-optimized with 1 threads
+
+real	0m5.676s
+user	0m4.479s
+sys	0m1.176s
+Run 1: Running task3-optimized with 2 threads
+
+real	0m3.437s
+user	0m4.771s
+sys	0m1.234s
+Run 2: Running task3-optimized with 2 threads
+
+real	0m3.382s
+user	0m4.637s
+sys	0m1.206s
+Run 3: Running task3-optimized with 2 threads
+
+real	0m3.549s
+user	0m4.932s
+sys	0m1.278s
+Run 4: Running task3-optimized with 2 threads
+
+real	0m3.502s
+user	0m4.892s
+sys	0m1.258s
+Run 5: Running task3-optimized with 2 threads
+
+real	0m3.375s
+user	0m4.631s
+sys	0m1.259s
+Run 6: Running task3-optimized with 2 threads
+
+real	0m3.378s
+user	0m4.635s
+sys	0m1.259s
+Run 7: Running task3-optimized with 2 threads
+
+real	0m3.374s
+user	0m4.642s
+sys	0m1.249s
+Run 8: Running task3-optimized with 2 threads
+
+real	0m3.371s
+user	0m4.628s
+sys	0m1.257s
+Run 9: Running task3-optimized with 2 threads
+
+real	0m3.375s
+user	0m4.630s
+sys	0m1.263s
+Run 10: Running task3-optimized with 2 threads
+
+real	0m3.372s
+user	0m4.624s
+sys	0m1.264s
+Run 1: Running task3-optimized with 4 threads
+
+real	0m2.233s
+user	0m4.938s
+sys	0m1.311s
+Run 2: Running task3-optimized with 4 threads
+
+real	0m2.234s
+user	0m4.900s
+sys	0m1.347s
+Run 3: Running task3-optimized with 4 threads
+
+real	0m2.271s
+user	0m5.014s
+sys	0m1.373s
+Run 4: Running task3-optimized with 4 threads
+
+real	0m2.230s
+user	0m4.873s
+sys	0m1.365s
+Run 5: Running task3-optimized with 4 threads
+
+real	0m2.236s
+user	0m4.934s
+sys	0m1.326s
+Run 6: Running task3-optimized with 4 threads
+
+real	0m2.230s
+user	0m4.952s
+sys	0m1.284s
+Run 7: Running task3-optimized with 4 threads
+
+real	0m2.241s
+user	0m4.900s
+sys	0m1.374s
+Run 8: Running task3-optimized with 4 threads
+
+real	0m2.207s
+user	0m4.949s
+sys	0m1.287s
+Run 9: Running task3-optimized with 4 threads
+
+real	0m2.211s
+user	0m4.939s
+sys	0m1.315s
+Run 10: Running task3-optimized with 4 threads
+
+real	0m2.310s
+user	0m5.148s
+sys	0m1.344s
+Run 1: Running task3-optimized with 6 threads
+
+real	0m1.910s
+user	0m5.588s
+sys	0m1.530s
+Run 2: Running task3-optimized with 6 threads
+
+real	0m1.985s
+user	0m5.648s
+sys	0m1.687s
+Run 3: Running task3-optimized with 6 threads
+
+real	0m2.003s
+user	0m5.650s
+sys	0m1.686s
+Run 4: Running task3-optimized with 6 threads
+
+real	0m1.941s
+user	0m5.480s
+sys	0m1.642s
+Run 5: Running task3-optimized with 6 threads
+
+real	0m1.914s
+user	0m5.571s
+sys	0m1.540s
+Run 6: Running task3-optimized with 6 threads
+
+real	0m1.933s
+user	0m5.572s
+sys	0m1.547s
+Run 7: Running task3-optimized with 6 threads
+
+real	0m1.883s
+user	0m5.533s
+sys	0m1.564s
+Run 8: Running task3-optimized with 6 threads
+
+real	0m1.973s
+user	0m5.676s
+sys	0m1.618s
+Run 9: Running task3-optimized with 6 threads
+
+real	0m1.888s
+user	0m5.533s
+sys	0m1.578s
+Run 10: Running task3-optimized with 6 threads
+
+real	0m1.898s
+user	0m5.556s
+sys	0m1.554s
+Run 1: Running task3-optimized with 12 threads
+
+real	0m1.782s
+user	0m9.304s
+sys	0m2.636s
+Run 2: Running task3-optimized with 12 threads
+
+real	0m1.864s
+user	0m9.362s
+sys	0m2.434s
+Run 3: Running task3-optimized with 12 threads
+
+real	0m1.835s
+user	0m9.374s
+sys	0m2.523s
+Run 4: Running task3-optimized with 12 threads
+
+real	0m1.815s
+user	0m9.256s
+sys	0m2.530s
+Run 5: Running task3-optimized with 12 threads
+
+real	0m1.929s
+user	0m9.514s
+sys	0m2.499s
+Run 6: Running task3-optimized with 12 threads
+
+real	0m1.800s
+user	0m9.334s
+sys	0m2.656s
+Run 7: Running task3-optimized with 12 threads
+
+real	0m1.831s
+user	0m9.323s
+sys	0m2.565s
+Run 8: Running task3-optimized with 12 threads
+
+real	0m1.964s
+user	0m9.390s
+sys	0m2.457s
+Run 9: Running task3-optimized with 12 threads
+
+real	0m2.035s
+user	0m9.508s
+sys	0m2.437s
+Run 10: Running task3-optimized with 12 threads
+
+real	0m1.846s
+user	0m9.339s
+sys	0m2.511s

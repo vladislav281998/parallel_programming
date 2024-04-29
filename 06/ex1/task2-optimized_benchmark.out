@@ -1,0 +1,250 @@
+Run 1: Running task2-optimized with 1 threads
+
+real	0m8.326s
+user	0m4.776s
+sys	0m3.512s
+Run 2: Running task2-optimized with 1 threads
+
+real	0m8.334s
+user	0m4.801s
+sys	0m3.500s
+Run 3: Running task2-optimized with 1 threads
+
+real	0m8.320s
+user	0m4.758s
+sys	0m3.530s
+Run 4: Running task2-optimized with 1 threads
+
+real	0m8.289s
+user	0m4.783s
+sys	0m3.474s
+Run 5: Running task2-optimized with 1 threads
+
+real	0m8.283s
+user	0m4.752s
+sys	0m3.501s
+Run 6: Running task2-optimized with 1 threads
+
+real	0m8.269s
+user	0m4.840s
+sys	0m3.399s
+Run 7: Running task2-optimized with 1 threads
+
+real	0m8.277s
+user	0m4.784s
+sys	0m3.459s
+Run 8: Running task2-optimized with 1 threads
+
+real	0m8.265s
+user	0m4.777s
+sys	0m3.458s
+Run 9: Running task2-optimized with 1 threads
+
+real	0m8.329s
+user	0m4.773s
+sys	0m3.524s
+Run 10: Running task2-optimized with 1 threads
+
+real	0m9.041s
+user	0m4.869s
+sys	0m4.134s
+Run 1: Running task2-optimized with 2 threads
+
+real	0m5.398s
+user	0m4.745s
+sys	0m3.723s
+Run 2: Running task2-optimized with 2 threads
+
+real	0m5.396s
+user	0m4.792s
+sys	0m3.674s
+Run 3: Running task2-optimized with 2 threads
+
+real	0m5.554s
+user	0m4.749s
+sys	0m3.244s
+Run 4: Running task2-optimized with 2 threads
+
+real	0m5.399s
+user	0m4.809s
+sys	0m3.660s
+Run 5: Running task2-optimized with 2 threads
+
+real	0m5.433s
+user	0m4.856s
+sys	0m3.656s
+Run 6: Running task2-optimized with 2 threads
+
+real	0m5.393s
+user	0m4.837s
+sys	0m3.626s
+Run 7: Running task2-optimized with 2 threads
+
+real	0m5.434s
+user	0m4.841s
+sys	0m3.662s
+Run 8: Running task2-optimized with 2 threads
+
+real	0m5.431s
+user	0m4.893s
+sys	0m3.607s
+Run 9: Running task2-optimized with 2 threads
+
+real	0m5.425s
+user	0m4.807s
+sys	0m3.690s
+Run 10: Running task2-optimized with 2 threads
+
+real	0m5.431s
+user	0m4.812s
+sys	0m3.694s
+Run 1: Running task2-optimized with 4 threads
+
+real	0m4.010s
+user	0m4.811s
+sys	0m3.461s
+Run 2: Running task2-optimized with 4 threads
+
+real	0m3.996s
+user	0m4.811s
+sys	0m3.434s
+Run 3: Running task2-optimized with 4 threads
+
+real	0m4.052s
+user	0m4.839s
+sys	0m3.478s
+Run 4: Running task2-optimized with 4 threads
+
+real	0m4.004s
+user	0m4.805s
+sys	0m3.467s
+Run 5: Running task2-optimized with 4 threads
+
+real	0m3.996s
+user	0m4.836s
+sys	0m3.400s
+Run 6: Running task2-optimized with 4 threads
+
+real	0m4.069s
+user	0m4.832s
+sys	0m3.580s
+Run 7: Running task2-optimized with 4 threads
+
+real	0m4.044s
+user	0m4.812s
+sys	0m3.508s
+Run 8: Running task2-optimized with 4 threads
+
+real	0m3.995s
+user	0m4.797s
+sys	0m3.486s
+Run 9: Running task2-optimized with 4 threads
+
+real	0m4.002s
+user	0m4.813s
+sys	0m3.440s
+Run 10: Running task2-optimized with 4 threads
+
+real	0m4.005s
+user	0m4.830s
+sys	0m3.480s
+Run 1: Running task2-optimized with 6 threads
+
+real	0m3.264s
+user	0m4.949s
+sys	0m3.445s
+Run 2: Running task2-optimized with 6 threads
+
+real	0m3.196s
+user	0m5.151s
+sys	0m3.235s
+Run 3: Running task2-optimized with 6 threads
+
+real	0m3.281s
+user	0m5.237s
+sys	0m3.259s
+Run 4: Running task2-optimized with 6 threads
+
+real	0m3.162s
+user	0m5.018s
+sys	0m3.301s
+Run 5: Running task2-optimized with 6 threads
+
+real	0m3.340s
+user	0m5.006s
+sys	0m3.508s
+Run 6: Running task2-optimized with 6 threads
+
+real	0m3.197s
+user	0m4.898s
+sys	0m3.429s
+Run 7: Running task2-optimized with 6 threads
+
+real	0m3.266s
+user	0m4.963s
+sys	0m3.427s
+Run 8: Running task2-optimized with 6 threads
+
+real	0m3.168s
+user	0m4.876s
+sys	0m3.392s
+Run 9: Running task2-optimized with 6 threads
+
+real	0m3.271s
+user	0m4.924s
+sys	0m3.493s
+Run 10: Running task2-optimized with 6 threads
+
+real	0m3.181s
+user	0m4.932s
+sys	0m3.386s
+Run 1: Running task2-optimized with 12 threads
+
+real	0m3.135s
+user	0m6.353s
+sys	0m5.397s
+Run 2: Running task2-optimized with 12 threads
+
+real	0m3.063s
+user	0m7.361s
+sys	0m5.209s
+Run 3: Running task2-optimized with 12 threads
+
+real	0m3.098s
+user	0m6.252s
+sys	0m5.412s
+Run 4: Running task2-optimized with 12 threads
+
+real	0m3.030s
+user	0m7.393s
+sys	0m5.243s
+Run 5: Running task2-optimized with 12 threads
+
+real	0m3.136s
+user	0m6.270s
+sys	0m5.467s
+Run 6: Running task2-optimized with 12 threads
+
+real	0m3.059s
+user	0m7.274s
+sys	0m5.328s
+Run 7: Running task2-optimized with 12 threads
+
+real	0m3.091s
+user	0m6.382s
+sys	0m5.384s
+Run 8: Running task2-optimized with 12 threads
+
+real	0m3.188s
+user	0m6.249s
+sys	0m5.519s
+Run 9: Running task2-optimized with 12 threads
+
+real	0m3.151s
+user	0m6.241s
+sys	0m5.407s
+Run 10: Running task2-optimized with 12 threads
+
+real	0m3.146s
+user	0m6.369s
+sys	0m5.440s

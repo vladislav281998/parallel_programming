@@ -1,0 +1,50 @@
+Run 1: Running task2-unoptimized with 1 threads
+
+real	0m8.342s
+user	0m4.793s
+sys	0m3.489s
+Run 2: Running task2-unoptimized with 1 threads
+
+real	0m8.301s
+user	0m4.830s
+sys	0m3.440s
+Run 3: Running task2-unoptimized with 1 threads
+
+real	0m8.277s
+user	0m4.737s
+sys	0m3.510s
+Run 4: Running task2-unoptimized with 1 threads
+
+real	0m8.280s
+user	0m4.769s
+sys	0m3.481s
+Run 5: Running task2-unoptimized with 1 threads
+
+real	0m8.275s
+user	0m4.813s
+sys	0m3.432s
+Run 6: Running task2-unoptimized with 1 threads
+
+real	0m8.272s
+user	0m4.749s
+sys	0m3.494s
+Run 7: Running task2-unoptimized with 1 threads
+
+real	0m8.272s
+user	0m4.825s
+sys	0m3.418s
+Run 8: Running task2-unoptimized with 1 threads
+
+real	0m8.268s
+user	0m4.742s
+sys	0m3.496s
+Run 9: Running task2-unoptimized with 1 threads
+
+real	0m8.274s
+user	0m4.819s
+sys	0m3.420s
+Run 10: Running task2-unoptimized with 1 threads
+
+real	0m8.282s
+user	0m4.822s
+sys	0m3.430s

@@ -1,0 +1,50 @@
+Run 1: Running task1-unoptimized with 1 threads
+
+real	0m0.028s
+user	0m0.001s
+sys	0m0.003s
+Run 2: Running task1-unoptimized with 1 threads
+
+real	0m0.002s
+user	0m0.001s
+sys	0m0.001s
+Run 3: Running task1-unoptimized with 1 threads
+
+real	0m0.002s
+user	0m0.001s
+sys	0m0.001s
+Run 4: Running task1-unoptimized with 1 threads
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+Run 5: Running task1-unoptimized with 1 threads
+
+real	0m0.003s
+user	0m0.000s
+sys	0m0.002s
+Run 6: Running task1-unoptimized with 1 threads
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+Run 7: Running task1-unoptimized with 1 threads
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.001s
+Run 8: Running task1-unoptimized with 1 threads
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+Run 9: Running task1-unoptimized with 1 threads
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s
+Run 10: Running task1-unoptimized with 1 threads
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
