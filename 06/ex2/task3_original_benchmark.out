@@ -1,0 +1,600 @@
+Run 1: Running task3_original with 1 threads
+Execution time of optimized function: 4.022200 seconds
+
+real	0m9.951s
+user	0m5.600s
+sys	0m4.292s
+Run 2: Running task3_original with 1 threads
+Execution time of optimized function: 4.027718 seconds
+
+real	0m9.400s
+user	0m5.728s
+sys	0m3.636s
+Run 3: Running task3_original with 1 threads
+Execution time of optimized function: 4.011712 seconds
+
+real	0m9.950s
+user	0m5.636s
+sys	0m4.266s
+Run 4: Running task3_original with 1 threads
+Execution time of optimized function: 4.026565 seconds
+
+real	0m9.408s
+user	0m5.792s
+sys	0m3.578s
+Run 5: Running task3_original with 1 threads
+Execution time of optimized function: 4.022056 seconds
+
+real	0m9.944s
+user	0m5.618s
+sys	0m4.277s
+Run 6: Running task3_original with 1 threads
+Execution time of optimized function: 4.032435 seconds
+
+real	0m9.420s
+user	0m5.750s
+sys	0m3.627s
+Run 7: Running task3_original with 1 threads
+Execution time of optimized function: 4.024735 seconds
+
+real	0m9.404s
+user	0m5.760s
+sys	0m3.607s
+Run 8: Running task3_original with 1 threads
+Execution time of optimized function: 4.026767 seconds
+
+real	0m9.428s
+user	0m5.751s
+sys	0m3.637s
+Run 9: Running task3_original with 1 threads
+Execution time of optimized function: 4.020788 seconds
+
+real	0m9.946s
+user	0m5.623s
+sys	0m4.276s
+Run 10: Running task3_original with 1 threads
+Execution time of optimized function: 4.029535 seconds
+
+real	0m9.414s
+user	0m5.727s
+sys	0m3.643s
+Run 1: Running task3_original with 2 threads
+Execution time of optimized function: 4.026688 seconds
+
+real	0m9.379s
+user	0m5.740s
+sys	0m3.601s
+Run 2: Running task3_original with 2 threads
+Execution time of optimized function: 4.027093 seconds
+
+real	0m9.375s
+user	0m5.758s
+sys	0m3.580s
+Run 3: Running task3_original with 2 threads
+Execution time of optimized function: 4.017523 seconds
+
+real	0m9.950s
+user	0m5.630s
+sys	0m4.270s
+Run 4: Running task3_original with 2 threads
+Execution time of optimized function: 4.022661 seconds
+
+real	0m9.340s
+user	0m5.735s
+sys	0m3.565s
+Run 5: Running task3_original with 2 threads
+Execution time of optimized function: 4.021088 seconds
+
+real	0m9.946s
+user	0m5.624s
+sys	0m4.273s
+Run 6: Running task3_original with 2 threads
+Execution time of optimized function: 4.023724 seconds
+
+real	0m9.347s
+user	0m5.747s
+sys	0m3.564s
+Run 7: Running task3_original with 2 threads
+Execution time of optimized function: 4.023609 seconds
+
+real	0m9.959s
+user	0m5.622s
+sys	0m4.287s
+Run 8: Running task3_original with 2 threads
+Execution time of optimized function: 4.047353 seconds
+
+real	0m9.364s
+user	0m5.784s
+sys	0m3.545s
+Run 9: Running task3_original with 2 threads
+Execution time of optimized function: 4.031096 seconds
+
+real	0m9.404s
+user	0m5.743s
+sys	0m3.629s
+Run 10: Running task3_original with 2 threads
+Execution time of optimized function: 4.022662 seconds
+
+real	0m9.360s
+user	0m5.713s
+sys	0m3.610s
+Run 1: Running task3_original with 4 threads
+Execution time of optimized function: 4.022814 seconds
+
+real	0m9.341s
+user	0m5.780s
+sys	0m3.525s
+Run 2: Running task3_original with 4 threads
+Execution time of optimized function: 4.031472 seconds
+
+real	0m9.345s
+user	0m5.780s
+sys	0m3.529s
+Run 3: Running task3_original with 4 threads
+Execution time of optimized function: 4.022530 seconds
+
+real	0m9.347s
+user	0m5.729s
+sys	0m3.583s
+Run 4: Running task3_original with 4 threads
+Execution time of optimized function: 4.018631 seconds
+
+real	0m9.938s
+user	0m5.599s
+sys	0m4.288s
+Run 5: Running task3_original with 4 threads
+Execution time of optimized function: 4.033800 seconds
+
+real	0m9.381s
+user	0m5.761s
+sys	0m3.583s
+Run 6: Running task3_original with 4 threads
+Execution time of optimized function: 4.018978 seconds
+
+real	0m9.384s
+user	0m5.794s
+sys	0m3.549s
+Run 7: Running task3_original with 4 threads
+Execution time of optimized function: 4.023145 seconds
+
+real	0m9.364s
+user	0m5.721s
+sys	0m3.605s
+Run 8: Running task3_original with 4 threads
+Execution time of optimized function: 4.023164 seconds
+
+real	0m9.950s
+user	0m5.631s
+sys	0m4.269s
+Run 9: Running task3_original with 4 threads
+Execution time of optimized function: 4.025179 seconds
+
+real	0m9.380s
+user	0m5.743s
+sys	0m3.595s
+Run 10: Running task3_original with 4 threads
+Execution time of optimized function: 4.036177 seconds
+
+real	0m9.389s
+user	0m5.749s
+sys	0m3.608s
+Run 1: Running task3_original with 6 threads
+Execution time of optimized function: 4.017355 seconds
+
+real	0m9.938s
+user	0m5.616s
+sys	0m4.268s
+Run 2: Running task3_original with 6 threads
+Execution time of optimized function: 4.022812 seconds
+
+real	0m9.251s
+user	0m5.765s
+sys	0m3.440s
+Run 3: Running task3_original with 6 threads
+Execution time of optimized function: 4.022855 seconds
+
+real	0m9.955s
+user	0m5.646s
+sys	0m4.259s
+Run 4: Running task3_original with 6 threads
+Execution time of optimized function: 4.020940 seconds
+
+real	0m9.941s
+user	0m5.673s
+sys	0m4.219s
+Run 5: Running task3_original with 6 threads
+Execution time of optimized function: 4.021830 seconds
+
+real	0m9.250s
+user	0m5.796s
+sys	0m3.417s
+Run 6: Running task3_original with 6 threads
+Execution time of optimized function: 4.021553 seconds
+
+real	0m9.234s
+user	0m5.772s
+sys	0m3.425s
+Run 7: Running task3_original with 6 threads
+Execution time of optimized function: 4.025851 seconds
+
+real	0m9.240s
+user	0m5.758s
+sys	0m3.446s
+Run 8: Running task3_original with 6 threads
+Execution time of optimized function: 4.021508 seconds
+
+real	0m9.204s
+user	0m5.747s
+sys	0m3.420s
+Run 9: Running task3_original with 6 threads
+Execution time of optimized function: 4.026540 seconds
+
+real	0m9.243s
+user	0m5.744s
+sys	0m3.457s
+Run 10: Running task3_original with 6 threads
+Execution time of optimized function: 4.021601 seconds
+
+real	0m9.244s
+user	0m5.744s
+sys	0m3.463s
+Run 1: Running task3_original with 12 threads
+Execution time of optimized function: 4.037168 seconds
+
+real	0m9.252s
+user	0m5.791s
+sys	0m3.425s
+Run 2: Running task3_original with 12 threads
+Execution time of optimized function: 4.026967 seconds
+
+real	0m9.224s
+user	0m5.748s
+sys	0m3.440s
+Run 3: Running task3_original with 12 threads
+Execution time of optimized function: 4.017014 seconds
+
+real	0m9.206s
+user	0m5.734s
+sys	0m3.438s
+Run 4: Running task3_original with 12 threads
+Execution time of optimized function: 4.012223 seconds
+
+real	0m9.233s
+user	0m5.732s
+sys	0m3.461s
+Run 5: Running task3_original with 12 threads
+Execution time of optimized function: 4.030433 seconds
+
+real	0m9.236s
+user	0m5.770s
+sys	0m3.428s
+Run 6: Running task3_original with 12 threads
+Execution time of optimized function: 4.023655 seconds
+
+real	0m9.213s
+user	0m5.788s
+sys	0m3.386s
+Run 7: Running task3_original with 12 threads
+Execution time of optimized function: 4.020922 seconds
+
+real	0m9.205s
+user	0m5.792s
+sys	0m3.376s
+Run 8: Running task3_original with 12 threads
+Execution time of optimized function: 4.019473 seconds
+
+real	0m9.253s
+user	0m5.748s
+sys	0m3.468s
+Run 9: Running task3_original with 12 threads
+Execution time of optimized function: 4.030341 seconds
+
+real	0m9.256s
+user	0m5.836s
+sys	0m3.379s
+Run 10: Running task3_original with 12 threads
+Execution time of optimized function: 4.022741 seconds
+
+real	0m9.246s
+user	0m5.779s
+sys	0m3.431s
+Run 1: Running task3_original with 1 threads
+Execution time of optimized function: 0.401348 seconds
+
+real	0m0.846s
+user	0m0.586s
+sys	0m0.248s
+Run 2: Running task3_original with 1 threads
+Execution time of optimized function: 0.401214 seconds
+
+real	0m0.837s
+user	0m0.592s
+sys	0m0.242s
+Run 3: Running task3_original with 1 threads
+Execution time of optimized function: 0.401494 seconds
+
+real	0m0.838s
+user	0m0.589s
+sys	0m0.245s
+Run 4: Running task3_original with 1 threads
+Execution time of optimized function: 0.401349 seconds
+
+real	0m0.838s
+user	0m0.589s
+sys	0m0.246s
+Run 5: Running task3_original with 1 threads
+Execution time of optimized function: 0.401175 seconds
+
+real	0m0.838s
+user	0m0.595s
+sys	0m0.239s
+Run 6: Running task3_original with 1 threads
+Execution time of optimized function: 0.401001 seconds
+
+real	0m0.837s
+user	0m0.596s
+sys	0m0.237s
+Run 7: Running task3_original with 1 threads
+Execution time of optimized function: 0.402531 seconds
+
+real	0m0.839s
+user	0m0.594s
+sys	0m0.241s
+Run 8: Running task3_original with 1 threads
+Execution time of optimized function: 0.401564 seconds
+
+real	0m0.839s
+user	0m0.586s
+sys	0m0.248s
+Run 9: Running task3_original with 1 threads
+Execution time of optimized function: 0.401057 seconds
+
+real	0m0.837s
+user	0m0.589s
+sys	0m0.245s
+Run 10: Running task3_original with 1 threads
+Execution time of optimized function: 0.401085 seconds
+
+real	0m0.837s
+user	0m0.594s
+sys	0m0.239s
+Run 1: Running task3_original with 2 threads
+Execution time of optimized function: 0.401263 seconds
+
+real	0m0.835s
+user	0m0.589s
+sys	0m0.242s
+Run 2: Running task3_original with 2 threads
+Execution time of optimized function: 0.400964 seconds
+
+real	0m0.834s
+user	0m0.596s
+sys	0m0.234s
+Run 3: Running task3_original with 2 threads
+Execution time of optimized function: 0.401482 seconds
+
+real	0m0.838s
+user	0m0.588s
+sys	0m0.246s
+Run 4: Running task3_original with 2 threads
+Execution time of optimized function: 0.401188 seconds
+
+real	0m0.838s
+user	0m0.595s
+sys	0m0.239s
+Run 5: Running task3_original with 2 threads
+Execution time of optimized function: 0.401136 seconds
+
+real	0m0.837s
+user	0m0.590s
+sys	0m0.243s
+Run 6: Running task3_original with 2 threads
+Execution time of optimized function: 0.401376 seconds
+
+real	0m0.837s
+user	0m0.592s
+sys	0m0.241s
+Run 7: Running task3_original with 2 threads
+Execution time of optimized function: 0.401403 seconds
+
+real	0m0.838s
+user	0m0.592s
+sys	0m0.242s
+Run 8: Running task3_original with 2 threads
+Execution time of optimized function: 0.401406 seconds
+
+real	0m0.838s
+user	0m0.592s
+sys	0m0.242s
+Run 9: Running task3_original with 2 threads
+Execution time of optimized function: 0.401150 seconds
+
+real	0m0.837s
+user	0m0.590s
+sys	0m0.244s
+Run 10: Running task3_original with 2 threads
+Execution time of optimized function: 0.400921 seconds
+
+real	0m0.838s
+user	0m0.594s
+sys	0m0.241s
+Run 1: Running task3_original with 4 threads
+Execution time of optimized function: 0.401310 seconds
+
+real	0m0.835s
+user	0m0.585s
+sys	0m0.246s
+Run 2: Running task3_original with 4 threads
+Execution time of optimized function: 0.401507 seconds
+
+real	0m0.835s
+user	0m0.600s
+sys	0m0.231s
+Run 3: Running task3_original with 4 threads
+Execution time of optimized function: 0.401119 seconds
+
+real	0m0.834s
+user	0m0.599s
+sys	0m0.232s
+Run 4: Running task3_original with 4 threads
+Execution time of optimized function: 0.401959 seconds
+
+real	0m0.835s
+user	0m0.587s
+sys	0m0.244s
+Run 5: Running task3_original with 4 threads
+Execution time of optimized function: 0.401639 seconds
+
+real	0m0.835s
+user	0m0.600s
+sys	0m0.231s
+Run 6: Running task3_original with 4 threads
+Execution time of optimized function: 0.401491 seconds
+
+real	0m0.835s
+user	0m0.589s
+sys	0m0.242s
+Run 7: Running task3_original with 4 threads
+Execution time of optimized function: 0.401536 seconds
+
+real	0m0.835s
+user	0m0.591s
+sys	0m0.240s
+Run 8: Running task3_original with 4 threads
+Execution time of optimized function: 0.401089 seconds
+
+real	0m0.838s
+user	0m0.590s
+sys	0m0.244s
+Run 9: Running task3_original with 4 threads
+Execution time of optimized function: 0.401269 seconds
+
+real	0m0.838s
+user	0m0.585s
+sys	0m0.249s
+Run 10: Running task3_original with 4 threads
+Execution time of optimized function: 0.401186 seconds
+
+real	0m0.838s
+user	0m0.592s
+sys	0m0.242s
+Run 1: Running task3_original with 6 threads
+Execution time of optimized function: 0.401594 seconds
+
+real	0m0.839s
+user	0m0.592s
+sys	0m0.243s
+Run 2: Running task3_original with 6 threads
+Execution time of optimized function: 0.401443 seconds
+
+real	0m0.838s
+user	0m0.594s
+sys	0m0.241s
+Run 3: Running task3_original with 6 threads
+Execution time of optimized function: 0.401752 seconds
+
+real	0m0.838s
+user	0m0.586s
+sys	0m0.248s
+Run 4: Running task3_original with 6 threads
+Execution time of optimized function: 0.401915 seconds
+
+real	0m0.838s
+user	0m0.587s
+sys	0m0.248s
+Run 5: Running task3_original with 6 threads
+Execution time of optimized function: 0.401490 seconds
+
+real	0m0.838s
+user	0m0.599s
+sys	0m0.235s
+Run 6: Running task3_original with 6 threads
+Execution time of optimized function: 0.401363 seconds
+
+real	0m0.837s
+user	0m0.587s
+sys	0m0.247s
+Run 7: Running task3_original with 6 threads
+Execution time of optimized function: 0.401372 seconds
+
+real	0m0.838s
+user	0m0.593s
+sys	0m0.241s
+Run 8: Running task3_original with 6 threads
+Execution time of optimized function: 0.400426 seconds
+
+real	0m0.843s
+user	0m0.591s
+sys	0m0.243s
+Run 9: Running task3_original with 6 threads
+Execution time of optimized function: 0.400462 seconds
+
+real	0m0.836s
+user	0m0.592s
+sys	0m0.240s
+Run 10: Running task3_original with 6 threads
+Execution time of optimized function: 0.401406 seconds
+
+real	0m0.838s
+user	0m0.589s
+sys	0m0.244s
+Run 1: Running task3_original with 12 threads
+Execution time of optimized function: 0.400747 seconds
+
+real	0m0.834s
+user	0m0.573s
+sys	0m0.257s
+Run 2: Running task3_original with 12 threads
+Execution time of optimized function: 0.401395 seconds
+
+real	0m0.838s
+user	0m0.591s
+sys	0m0.244s
+Run 3: Running task3_original with 12 threads
+Execution time of optimized function: 0.402544 seconds
+
+real	0m0.839s
+user	0m0.591s
+sys	0m0.244s
+Run 4: Running task3_original with 12 threads
+Execution time of optimized function: 0.402467 seconds
+
+real	0m0.840s
+user	0m0.596s
+sys	0m0.240s
+Run 5: Running task3_original with 12 threads
+Execution time of optimized function: 0.401034 seconds
+
+real	0m0.837s
+user	0m0.586s
+sys	0m0.247s
+Run 6: Running task3_original with 12 threads
+Execution time of optimized function: 0.402172 seconds
+
+real	0m0.835s
+user	0m0.591s
+sys	0m0.240s
+Run 7: Running task3_original with 12 threads
+Execution time of optimized function: 0.402097 seconds
+
+real	0m0.840s
+user	0m0.594s
+sys	0m0.242s
+Run 8: Running task3_original with 12 threads
+Execution time of optimized function: 0.401404 seconds
+
+real	0m0.838s
+user	0m0.592s
+sys	0m0.242s
+Run 9: Running task3_original with 12 threads
+Execution time of optimized function: 0.402112 seconds
+
+real	0m0.838s
+user	0m0.589s
+sys	0m0.246s
+Run 10: Running task3_original with 12 threads
+Execution time of optimized function: 0.401535 seconds
+
+real	0m0.838s
+user	0m0.596s
+sys	0m0.238s
