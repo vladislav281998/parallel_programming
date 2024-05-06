@@ -1,0 +1,111 @@
+1.
+a[0] = 0;
+#pragma omp parallel for
+for (i=1; i<N; i++) {
+    a[i] = 2.0*i*(i-1);
+    b[i] = a[i] - a[i-1];
+}
+
+Since b[i] is dependent on a[i-1] the above snippet would have a race condition.
+A possible solution is to split the loop into two loops where the first loop calculates all values for a, 
+and the second loop all values for b:
+
+a[0] = 0;
+#pragma omp parallel for
+for (i=1; i<N; i++) {
+    a[i] = 2.0*i*(i-1);
+}
+
+#pragma omp parallel for
+for (i=1; i<N; i++) {
+    b[i] = a[i] - a[i-1];
+}
+
+2.
+a[0] = 0;
+#pragma omp parallel
+{
+    #pragma omp for nowait
+    for (i=1; i<N; i++) {
+        a[i] = 3.0*i*(i+1);
+    }
+    #pragma omp for
+    for (i=1; i<N; i++) {
+        b[i] = a[i] - a[i-1];
+    }
+}
+
+The problem here is nowait. If a thread finishes the first for loop it will automatically start with the second without waiting for the other threads to finish.
+Again a thread might try to calculate b[i] while the corresponding a[i] and a[i-1] have not been calculated yet.
+Therefor nowait should be removed and the implicit barrier at the end of #pragma omp for will make sure the calculation of a happens before b.
+a[0] = 0;
+#pragma omp parallel
+{
+    #pragma omp for
+    for (i=1; i<N; i++) {
+        a[i] = 3.0*i*(i+1);
+    }
+    #pragma omp for
+    for (i=1; i<N; i++) {
+        b[i] = a[i] - a[i-1];
+    }
+}
+
+
+3.
+#pragma omp parallel for
+for (i=1; i<N; i++) {
+    x = sqrt(b[i]) - 1;
+    a[i] = x*x + 2*x + 1;
+}
+
+Because x is a shared variable there exists a race condition. One thread might be halfway through its iteration of the loop while another thread overwrites x.
+To avoid this we make x a private variable so each thread has its own copy of x:
+
+#pragma omp parallel for private(x)
+for (i=1; i<N; i++) {
+    x = sqrt(b[i]) - 1;
+    a[i] = x*x + 2*x + 1;
+}
+
+4.
+f = 2;
+#pragma omp parallel for private(f,x)
+for (i=1; i<N; i++) {
+    x = f * b[i];
+    a[i] = x - 7;
+}
+a[0] = x; 
+
+When using private, x starts with a random value and any modifications done to it inside the parallel region are not visible after the parallel region.
+So in the line a[0] = x;, a[0] is not influenced by the loop. The clause lastprivate. makes the value in last sequential iteration assigned back to the shared variable.
+Also f does not need to be a private variable because it is never modified inside the loop, so all threads can share it.
+
+
+f = 2;
+#pragma omp parallel for lastprivate(x) shared(f)
+for (i=1; i<N; i++) {
+    x = f * b[i];
+    a[i] = x - 7;
+}
+a[0] = x;
+
+5.
+sum = 0; 
+#pragma omp parallel for
+for (i=1; i<N; i++) {
+    sum = sum + b[i];
+}
+
+Here, there is a race condition on sum. Multiple threads might try to read and write to sum simultaneously.
+We could introduce a critical section, but that would lead to significant overhead, so we use atomic.
+
+sum = 0; 
+#pragma omp parallel for
+for (i=1; i<N; i++) {
+	#pragma omp atomic
+    sum = sum + b[i];
+}
+
+OpenMP also offers the reduction clause for this exact scenario. It creates a private copy of sum for each thread and once the parallel region ends sum is reduced in one atomic operation.
+ 
