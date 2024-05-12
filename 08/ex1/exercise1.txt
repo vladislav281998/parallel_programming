@@ -1,0 +1,19 @@
+OMP_PROC_BIND=True
+
+OMP_PROC_BIND=True binds threads to a specific OpenMP place for its lifetime.
+This avoids the potential extensive overhead introduced by dynamically moving threads.
+
+OMP_PLACES={0:1:1} OMP_PLACES=sockets
+
+OMP_PLACES={0:1:1} creates a single place for all threads at core 0.
+OMP_PLACES=sockets allows OpenMP to spread the threads across all available sockets.
+
+OMP_PLACES={0:1:1} is by far faster, most likely because of better cache utilization. Since sum is kept in 
+cache accesable to all threads, the updated version does not have to be retrieved from main memory.
+
+OMP_PLACES=sockets Inter-socket communication especially in regards to the atomic synchronization introduces significant overhead.
+In fact even omitting OMP_PLACES entirely is faster.
+Performance wise this is equivalent to omitting both OMP_PROC_BIND=True and OMP_PLACES since without OMP_PROC_BIND=True threads can
+run (and be moved) on all available cores, also introducing the overhead from inter-socket communication.
+
+

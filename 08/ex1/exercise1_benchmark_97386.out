@@ -1,0 +1,266 @@
+Running with all threads in one place
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5               0 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 3.131522 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5               0 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 3.130951 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5               0 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 3.130719 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5               0 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 3.131068 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5               0 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 3.135712 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5               0 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 3.135502 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5               0 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 3.139161 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5               0 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 3.132781 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5               0 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 3.132582 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5               0 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 3.134237 seconds
+Running with threads spread across sockets
+Thread Affinity: 001        0       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 11.330982 seconds
+Thread Affinity: 001        0       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 9.701978 seconds
+Thread Affinity: 001        0       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 9.370377 seconds
+Thread Affinity: 001        0       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 9.702240 seconds
+Thread Affinity: 001        0       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 11.387251 seconds
+Thread Affinity: 001        0       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 9.701199 seconds
+Thread Affinity: 001        0       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 9.701053 seconds
+Thread Affinity: 001        0       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 9.475526 seconds
+Thread Affinity: 001        0       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 11.319647 seconds
+Thread Affinity: 001        0       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 9.697718 seconds
+Running without OMP_PLACES specified:
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1              12 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               1 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3              13 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               2 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5              14 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 8.143054 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1              12 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               1 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3              13 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               2 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5              14 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 8.284415 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1              12 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               1 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3              13 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               2 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5              14 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 8.109601 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1              12 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               1 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3              13 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               2 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5              14 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 8.109889 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1              12 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               1 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3              13 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               2 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5              14 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 8.287241 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1              12 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               1 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3              13 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               2 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5              14 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 8.284795 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1              12 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               1 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3              13 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               2 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5              14 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 8.109666 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1              12 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               1 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3              13 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               2 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5              14 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 8.109225 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1              12 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               1 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3              13 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               2 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5              14 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 8.109155 seconds
+Thread Affinity: 001        0               0 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1              12 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2               1 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3              13 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4               2 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5              14 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 8.272484 seconds
+Running without OMP_PLACES & OMP_PROC_BIND specified:
+Thread Affinity: 001        0       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 9.803139 seconds
+Thread Affinity: 001        0       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Sum: 500000000
+Time taken: 9.797538 seconds
+Thread Affinity: 001        0       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        1       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        2       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        3       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        4       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
+Thread Affinity: 001        5       0-5,12-17 n015.intern.lcc3.intra.uibk.ac.at
