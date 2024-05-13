@@ -1,0 +1,50 @@
+Static Scheduling:
+
+In static scheduling, loop iterations are statically distributed among threads before the program execution begins. 
+The chunk size is predefined and remains constant throughout execution. For loop-based code where each iteration takes the same amount of time, 
+static scheduling can evenly distribute the workload among all threads. However, with unevenly distributed iterations or non-uniform iteration execution times, 
+static scheduling may lead to uneven thread loads and inefficient resource utilization.
+
+Dynamic Scheduling:
+
+In dynamic scheduling, loop iterations are dynamically distributed among threads during program execution. 
+Each thread receives a new chunk of iterations as it finishes the previous one. The chunk size can be fixed or vary over time. 
+Dynamic scheduling is effective for handling uneven or non-uniform iterations since it allows for more efficient workload distribution among threads. 
+However, the overhead of redistributing iterations between threads can degrade performance, especially with fine-grained iterations or a large number of threads.
+
+Guided Scheduling:
+
+Guided scheduling starts with a large chunk size that decreases over time during execution. 
+This method ensures quick initial workload distribution among threads to avoid overheads associated with redistribution. 
+As execution progresses, guided scheduling becomes more similar to dynamic scheduling, 
+effectively distributing the workload while considering program execution characteristics.
+
+Auto Scheduling:
+
+The compiler or runtime system dynamically selects the most suitable scheduling strategy based on the program's characteristics and execution environment. 
+This allows for adaptive scheduling that can optimize performance across different hardware architectures and workload variations. 
+Auto scheduling reduces the burden on the programmer to manually specify the scheduling strategy and can potentially lead to better performance without additional tuning efforts.
+
+Runtime Scheduling:
+
+Runtime scheduling is similar to auto scheduling but provides explicit control over the scheduling strategy at runtime through environment variables or API calls. 
+With runtime scheduling, the scheduling strategy can be adjusted dynamically during program execution based on performance measurements or changes in workload characteristics. 
+This flexibility allows for fine-tuning the program's behavior in response to runtime conditions, such as load imbalance or variations in workload. 
+Runtime scheduling provides greater control to the programmer compared to auto scheduling, but it also requires more explicit management 
+and may introduce additional overhead due to runtime decision-making.
+
+
+Benchmark analyse: 
+
+Observations:
+
+Impact of Thread Count: Generally, increasing the number of threads improves performance for both code snippets up to a certain point. 
+This is because parallel processing allows tasks to be divided and executed simultaneously. However, after a certain number of threads, 
+the overhead of managing threads may outweigh the benefits of parallelization.
+
+Dynamic and Guided scheduling often outperform Static scheduling for larger matrices due to their ability to adapt to workload.
+The row-wise version consistently outperforms the column-wise version in both Dynamic and Guided scheduling, especially for larger matrices. T
+his is likely because the row-wise memory layout enables better data access patterns for the algorithms used.
+
+Impact of Matrix Size: Execution time significantly increases with larger matrix sizes as more computations need to be performed.
+
