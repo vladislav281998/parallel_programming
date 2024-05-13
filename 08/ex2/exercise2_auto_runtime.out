@@ -1,0 +1,164 @@
+Schedule: auto
+Matrix size: 10000 x 10000
+Parallel implementation with 1 threads:
+Row version
+Parallel hadamard_row execution time: 0.588404 seconds
+Column version
+Parallel execution time: 6.110989 seconds
+Parallel implementation with 2 threads:
+Row version
+Parallel hadamard_row execution time: 0.308688 seconds
+Column version
+Parallel execution time: 3.129949 seconds
+Parallel implementation with 4 threads:
+Row version
+Parallel hadamard_row execution time: 0.179667 seconds
+Column version
+Parallel execution time: 1.622811 seconds
+Parallel implementation with 6 threads:
+Row version
+Parallel hadamard_row execution time: 0.144370 seconds
+Column version
+Parallel execution time: 1.206821 seconds
+Parallel implementation with 12 threads:
+Row version
+Parallel hadamard_row execution time: 0.126518 seconds
+Column version
+Parallel execution time: 0.705269 seconds
+
+Matrix size: 20000 x 20000
+Parallel implementation with 1 threads:
+Row version
+Parallel hadamard_row execution time: 2.483709 seconds
+Column version
+Parallel execution time: 32.101723 seconds
+Parallel implementation with 2 threads:
+Row version
+Parallel hadamard_row execution time: 1.282381 seconds
+Column version
+Parallel execution time: 18.499955 seconds
+Parallel implementation with 4 threads:
+Row version
+Parallel hadamard_row execution time: 0.776398 seconds
+Column version
+Parallel execution time: 10.524323 seconds
+Parallel implementation with 6 threads:
+Row version
+Parallel hadamard_row execution time: 0.604836 seconds
+Column version
+Parallel execution time: 9.372406 seconds
+Parallel implementation with 12 threads:
+Row version
+Parallel hadamard_row execution time: 0.493592 seconds
+Column version
+Parallel execution time: 6.924719 seconds
+
+Matrix size: 30000 x 30000
+Parallel implementation with 1 threads:
+Row version
+Parallel hadamard_row execution time: 5.422499 seconds
+Column version
+Parallel execution time: 70.840266 seconds
+Parallel implementation with 2 threads:
+Row version
+Parallel hadamard_row execution time: 2.854440 seconds
+Column version
+Parallel execution time: 67.137203 seconds
+Parallel implementation with 4 threads:
+Row version
+Parallel hadamard_row execution time: 1.710605 seconds
+Column version
+Parallel execution time: 43.537018 seconds
+Parallel implementation with 6 threads:
+Row version
+Parallel hadamard_row execution time: 1.323250 seconds
+Column version
+Parallel execution time: 33.230450 seconds
+Parallel implementation with 12 threads:
+Row version
+Parallel hadamard_row execution time: 1.099887 seconds
+Column version
+Parallel execution time: 17.268709 seconds
+
+Schedule: runtime
+Matrix size: 10000 x 10000
+Parallel implementation with 1 threads:
+Row version
+Parallel hadamard_row execution time: 0.590321 seconds
+Column version
+Parallel execution time: 5.902809 seconds
+Parallel implementation with 2 threads:
+Row version
+Parallel hadamard_row execution time: 0.320177 seconds
+Column version
+Parallel execution time: 3.325008 seconds
+Parallel implementation with 4 threads:
+Row version
+Parallel hadamard_row execution time: 0.192873 seconds
+Column version
+Parallel execution time: 1.817313 seconds
+Parallel implementation with 6 threads:
+Row version
+Parallel hadamard_row execution time: 0.148554 seconds
+Column version
+Parallel execution time: 1.275263 seconds
+Parallel implementation with 12 threads:
+Row version
+Parallel hadamard_row execution time: 0.119913 seconds
+Column version
+Parallel execution time: 0.711691 seconds
+
+Matrix size: 20000 x 20000
+Parallel implementation with 1 threads:
+Row version
+Parallel hadamard_row execution time: 2.474688 seconds
+Column version
+Parallel execution time: 32.046805 seconds
+Parallel implementation with 2 threads:
+Row version
+Parallel hadamard_row execution time: 1.327387 seconds
+Column version
+Parallel execution time: 17.134698 seconds
+Parallel implementation with 4 threads:
+Row version
+Parallel hadamard_row execution time: 0.816360 seconds
+Column version
+Parallel execution time: 10.373830 seconds
+Parallel implementation with 6 threads:
+Row version
+Parallel hadamard_row execution time: 0.625878 seconds
+Column version
+Parallel execution time: 8.171723 seconds
+Parallel implementation with 12 threads:
+Row version
+Parallel hadamard_row execution time: 0.495305 seconds
+Column version
+Parallel execution time: 7.211775 seconds
+
+Matrix size: 30000 x 30000
+Parallel implementation with 1 threads:
+Row version
+Parallel hadamard_row execution time: 5.406759 seconds
+Column version
+Parallel execution time: 69.920867 seconds
+Parallel implementation with 2 threads:
+Row version
+Parallel hadamard_row execution time: 2.924349 seconds
+Column version
+Parallel execution time: 39.612842 seconds
+Parallel implementation with 4 threads:
+Row version
+Parallel hadamard_row execution time: 1.786400 seconds
+Column version
+Parallel execution time: 23.238525 seconds
+Parallel implementation with 6 threads:
+Row version
+Parallel hadamard_row execution time: 1.387193 seconds
+Column version
+Parallel execution time: 17.609855 seconds
+Parallel implementation with 12 threads:
+Row version
+Parallel hadamard_row execution time: 1.095398 seconds
+Column version
+Parallel execution time: 14.248717 seconds
+

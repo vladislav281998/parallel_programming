@@ -1,0 +1,45 @@
+Matrix size: 10000 x 10000
+Serial implementation:
+Size 10000: 
+Serial execution time: 0.592005 seconds
+Parallel implementation with 1 threads:
+Parallel execution time: 0.593145 seconds
+Parallel implementation with 2 threads:
+Parallel execution time: 0.321565 seconds
+Parallel implementation with 4 threads:
+Parallel execution time: 0.179791 seconds
+Parallel implementation with 6 threads:
+Parallel execution time: 0.145582 seconds
+Parallel implementation with 12 threads:
+Parallel execution time: 0.116051 seconds
+
+Matrix size: 20000 x 20000
+Serial implementation:
+Size 20000: 
+Serial execution time: 2.467201 seconds
+Parallel implementation with 1 threads:
+Parallel execution time: 2.472756 seconds
+Parallel implementation with 2 threads:
+Parallel execution time: 1.292686 seconds
+Parallel implementation with 4 threads:
+Parallel execution time: 0.767157 seconds
+Parallel implementation with 6 threads:
+Parallel execution time: 0.594469 seconds
+Parallel implementation with 12 threads:
+Parallel execution time: 0.495728 seconds
+
+Matrix size: 30000 x 30000
+Serial implementation:
+Size 30000: 
+Serial execution time: 5.360457 seconds
+Parallel implementation with 1 threads:
+Parallel execution time: 5.377150 seconds
+Parallel implementation with 2 threads:
+Parallel execution time: 2.820905 seconds
+Parallel implementation with 4 threads:
+Parallel execution time: 1.705027 seconds
+Parallel implementation with 6 threads:
+Parallel execution time: 1.329955 seconds
+Parallel implementation with 12 threads:
+Parallel execution time: 1.096264 seconds
+

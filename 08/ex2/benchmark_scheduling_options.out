@@ -1,0 +1,234 @@
+Matrix size: 10000 x 10000
+Schedule Dynamic: column version
+Number of threads 1 threads:
+Parallel execution time: 5.892834 seconds
+Number of threads 2 threads:
+Parallel execution time: 3.384203 seconds
+Number of threads 4 threads:
+Parallel execution time: 1.822043 seconds
+Number of threads 6 threads:
+Parallel execution time: 1.242869 seconds
+Number of threads 12 threads:
+Parallel execution time: 0.705493 seconds
+
+Matrix size: 20000 x 20000
+Schedule Dynamic: column version
+Number of threads 1 threads:
+Parallel execution time: 31.162923 seconds
+Number of threads 2 threads:
+Parallel execution time: 17.418858 seconds
+Number of threads 4 threads:
+Parallel execution time: 10.435699 seconds
+Number of threads 6 threads:
+Parallel execution time: 8.099294 seconds
+Number of threads 12 threads:
+Parallel execution time: 7.126354 seconds
+
+Matrix size: 30000 x 30000
+Schedule Dynamic: column version
+Number of threads 1 threads:
+Parallel execution time: 72.229861 seconds
+Number of threads 2 threads:
+Parallel execution time: 39.595385 seconds
+Number of threads 4 threads:
+Parallel execution time: 23.421073 seconds
+Number of threads 6 threads:
+Parallel execution time: 17.353952 seconds
+Number of threads 12 threads:
+Parallel execution time: 14.092825 seconds
+
+Matrix size: 10000 x 10000
+Schedule Dynamic: row version
+Number of threads 1 threads:
+Parallel execution time: 0.582142 seconds
+Number of threads 2 threads:
+Parallel execution time: 0.314876 seconds
+Number of threads 4 threads:
+Parallel execution time: 0.194425 seconds
+Number of threads 6 threads:
+Parallel execution time: 0.149808 seconds
+Number of threads 12 threads:
+Parallel execution time: 0.120579 seconds
+
+Matrix size: 20000 x 20000
+Schedule Dynamic: row version
+Number of threads 1 threads:
+Parallel execution time: 2.468139 seconds
+Number of threads 2 threads:
+Parallel execution time: 1.330485 seconds
+Number of threads 4 threads:
+Parallel execution time: 0.808625 seconds
+Number of threads 6 threads:
+Parallel execution time: 0.635610 seconds
+Number of threads 12 threads:
+Parallel execution time: 0.491728 seconds
+
+Matrix size: 30000 x 30000
+Schedule Dynamic: row version
+Number of threads 1 threads:
+Parallel execution time: 5.403709 seconds
+Number of threads 2 threads:
+Parallel execution time: 2.917520 seconds
+Number of threads 4 threads:
+Parallel execution time: 1.794784 seconds
+Number of threads 6 threads:
+Parallel execution time: 1.420132 seconds
+Number of threads 12 threads:
+Parallel execution time: 1.091715 seconds
+
+Matrix size: 10000 x 10000
+Schedule Static: column version
+Number of threads 1 threads:
+Parallel hadamard_row execution time: 6.112151 seconds
+Number of threads 2 threads:
+Parallel hadamard_row execution time: 3.164078 seconds
+Number of threads 4 threads:
+Parallel hadamard_row execution time: 1.698613 seconds
+Number of threads 6 threads:
+Parallel hadamard_row execution time: 1.192872 seconds
+Number of threads 12 threads:
+Parallel hadamard_row execution time: 0.767769 seconds
+
+Matrix size: 20000 x 20000
+Schedule Static: column version
+Number of threads 1 threads:
+Parallel hadamard_row execution time: 31.022110 seconds
+Number of threads 2 threads:
+Parallel hadamard_row execution time: 18.190742 seconds
+Number of threads 4 threads:
+Parallel hadamard_row execution time: 10.641758 seconds
+Number of threads 6 threads:
+Parallel hadamard_row execution time: 9.253458 seconds
+Number of threads 12 threads:
+Parallel hadamard_row execution time: 6.854138 seconds
+
+Matrix size: 30000 x 30000
+Schedule Static: column version
+Number of threads 1 threads:
+Parallel hadamard_row execution time: 76.533113 seconds
+Number of threads 2 threads:
+Parallel hadamard_row execution time: 65.796268 seconds
+Number of threads 4 threads:
+Parallel hadamard_row execution time: 44.314922 seconds
+Number of threads 6 threads:
+Parallel hadamard_row execution time: 33.207340 seconds
+Number of threads 12 threads:
+Parallel hadamard_row execution time: 17.405870 seconds
+
+Matrix size: 10000 x 10000
+Schedule Static: row version
+Number of threads 1 threads:
+Parallel hadamard_row execution time: 0.583457 seconds
+Number of threads 2 threads:
+Parallel hadamard_row execution time: 0.307381 seconds
+Number of threads 4 threads:
+Parallel hadamard_row execution time: 0.178716 seconds
+Number of threads 6 threads:
+Parallel hadamard_row execution time: 0.141964 seconds
+Number of threads 12 threads:
+Parallel hadamard_row execution time: 0.125408 seconds
+
+Matrix size: 20000 x 20000
+Schedule Static: row version
+Number of threads 1 threads:
+Parallel hadamard_row execution time: 2.474495 seconds
+Number of threads 2 threads:
+Parallel hadamard_row execution time: 1.294604 seconds
+Number of threads 4 threads:
+Parallel hadamard_row execution time: 0.762975 seconds
+Number of threads 6 threads:
+Parallel hadamard_row execution time: 0.591762 seconds
+Number of threads 12 threads:
+Parallel hadamard_row execution time: 0.494307 seconds
+
+Matrix size: 30000 x 30000
+Schedule Static: row version
+Number of threads 1 threads:
+Parallel hadamard_row execution time: 5.417361 seconds
+Number of threads 2 threads:
+Parallel hadamard_row execution time: 3.099770 seconds
+Number of threads 4 threads:
+Parallel hadamard_row execution time: 1.664472 seconds
+Number of threads 6 threads:
+Parallel hadamard_row execution time: 1.314768 seconds
+Number of threads 12 threads:
+Parallel hadamard_row execution time: 1.091358 seconds
+
+Matrix size: 10000 x 10000
+Schedule Guided: column version
+Number of threads 1 threads:
+Parallel execution time: 5.887490 seconds
+Number of threads 2 threads:
+Parallel execution time: 3.017873 seconds
+Number of threads 4 threads:
+Parallel execution time: 1.581192 seconds
+Number of threads 6 threads:
+Parallel execution time: 1.105893 seconds
+Number of threads 12 threads:
+Parallel execution time: 0.662909 seconds
+
+Matrix size: 20000 x 20000
+Schedule Guided: column version
+Number of threads 1 threads:
+Parallel execution time: 32.090598 seconds
+Number of threads 2 threads:
+Parallel execution time: 18.348953 seconds
+Number of threads 4 threads:
+Parallel execution time: 9.370893 seconds
+Number of threads 6 threads:
+Parallel execution time: 7.734340 seconds
+Number of threads 12 threads:
+Parallel execution time: 4.704593 seconds
+
+Matrix size: 30000 x 30000
+Schedule Guided: column version
+Number of threads 1 threads:
+Parallel execution time: 71.168067 seconds
+Number of threads 2 threads:
+Parallel execution time: 66.229585 seconds
+Number of threads 4 threads:
+Parallel execution time: 34.792360 seconds
+Number of threads 6 threads:
+Parallel execution time: 28.206298 seconds
+Number of threads 12 threads:
+Parallel execution time: 14.968948 seconds
+
+Matrix size: 10000 x 10000
+Schedule Guided: row version
+Number of threads 1 threads:
+Parallel execution time: 0.584350 seconds
+Number of threads 2 threads:
+Parallel execution time: 0.303985 seconds
+Number of threads 4 threads:
+Parallel execution time: 0.180019 seconds
+Number of threads 6 threads:
+Parallel execution time: 0.142263 seconds
+Number of threads 12 threads:
+Parallel execution time: 0.117323 seconds
+
+Matrix size: 20000 x 20000
+Schedule Guided: row version
+Number of threads 1 threads:
+Parallel execution time: 2.453325 seconds
+Number of threads 2 threads:
+Parallel execution time: 1.278594 seconds
+Number of threads 4 threads:
+Parallel execution time: 0.785122 seconds
+Number of threads 6 threads:
+Parallel execution time: 0.600806 seconds
+Number of threads 12 threads:
+Parallel execution time: 0.507482 seconds
+
+Matrix size: 30000 x 30000
+Schedule Guided: row version
+Number of threads 1 threads:
+Parallel execution time: 5.390726 seconds
+Number of threads 2 threads:
+Parallel execution time: 2.803865 seconds
+Number of threads 4 threads:
+Parallel execution time: 1.750109 seconds
+Number of threads 6 threads:
+Parallel execution time: 1.324507 seconds
+Number of threads 12 threads:
+Parallel execution time: 1.088897 seconds
+
