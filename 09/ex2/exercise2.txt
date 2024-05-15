@@ -4,20 +4,9 @@ Observations:
 Correctness Confirmation:
 - Is the result still correct? Yes.
 
-Performance Findings:
-- 500,000,057 PACKED_SINGLE Events (Add + Mul)
-- 1,000,002,159 VECTOR Events (Store + Load) => One of them is probably not being vectorized.
-- 1,500,009,227 Total Events
-
-Double to Float Conversion Findings:
-- Time (double) = 1.637 s
-- Time (float) = 0.865 s
-- Optimisation is the same, but since double is twice as big as float, only half as many values can be calculated using a single vectorized instruction.
-
-Performance Summary:
-- 1,000,000,000 PACKED_DOUBLE Events (Add + Mul)
-- 2,000,000,153 VECTOR Events (Store + Load) => One of them is probably not being vectorized.
-- 3,000,007,227 Total Events
+Findings on converting double to float precision:
+- Execution time for the double precision version (omp_vectorized_double) is notably longer than the single precision version (omp_vectorized_float). This is due to the increased CPU resource demand of double precision operations, which involve larger data sizes and more complex arithmetic.
+- The performance counters for float operations, particularly r1010:u, indicate the usage of single precision SIMD instructions (FP_COMP_OPS_EXE.SSE_FP_PACKED). This similarity in counter readings between float and double suggests heavy reliance on single precision SIMD instructions for both, indicating possible optimization issues for double precision SIMD or translation errors by the compiler.
 
 Comparison with Exercise 1:
 - How does the solution for this exercise compare to Exercise 1?

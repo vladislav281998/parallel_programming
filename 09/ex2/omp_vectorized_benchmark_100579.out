@@ -1,0 +1,302 @@
+Running Float Version
+Run 1 (Float):
+2048, 0.521239, 1
+
+ Performance counter stats for './omp_vectorized_float':
+
+                 0      r1004:u                                                     
+        1024225789      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       0.605929481 seconds time elapsed
+
+       0.520750000 seconds user
+       0.003001000 seconds sys
+
+
+Run 2 (Float):
+2048, 0.511830, 1
+
+ Performance counter stats for './omp_vectorized_float':
+
+                 0      r1004:u                                                     
+        1024013471      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       0.515592477 seconds time elapsed
+
+       0.511077000 seconds user
+       0.001985000 seconds sys
+
+
+Run 3 (Float):
+2048, 0.512296, 1
+
+ Performance counter stats for './omp_vectorized_float':
+
+                 0      r1004:u                                                     
+        1024016319      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       0.515932942 seconds time elapsed
+
+       0.511384000 seconds user
+       0.001998000 seconds sys
+
+
+Run 4 (Float):
+2048, 0.512252, 1
+
+ Performance counter stats for './omp_vectorized_float':
+
+                 0      r1004:u                                                     
+        1024032061      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       0.516140481 seconds time elapsed
+
+       0.512438000 seconds user
+       0.000992000 seconds sys
+
+
+Run 5 (Float):
+2048, 0.510777, 1
+
+ Performance counter stats for './omp_vectorized_float':
+
+                 0      r1004:u                                                     
+        1024009027      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       0.514649327 seconds time elapsed
+
+       0.508997000 seconds user
+       0.002957000 seconds sys
+
+
+Run 6 (Float):
+2048, 0.511077, 1
+
+ Performance counter stats for './omp_vectorized_float':
+
+                 0      r1004:u                                                     
+        1024009964      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       0.515002446 seconds time elapsed
+
+       0.511235000 seconds user
+       0.001000000 seconds sys
+
+
+Run 7 (Float):
+2048, 0.511024, 1
+
+ Performance counter stats for './omp_vectorized_float':
+
+                 0      r1004:u                                                     
+        1024011076      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       0.515013752 seconds time elapsed
+
+       0.511142000 seconds user
+       0.000999000 seconds sys
+
+
+Run 8 (Float):
+2048, 0.511955, 1
+
+ Performance counter stats for './omp_vectorized_float':
+
+                 0      r1004:u                                                     
+        1024009488      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       0.516111325 seconds time elapsed
+
+       0.511159000 seconds user
+       0.001993000 seconds sys
+
+
+Run 9 (Float):
+2048, 0.514843, 1
+
+ Performance counter stats for './omp_vectorized_float':
+
+                 0      r1004:u                                                     
+        1024170816      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       0.519313051 seconds time elapsed
+
+       0.514098000 seconds user
+       0.001984000 seconds sys
+
+
+Run 10 (Float):
+2048, 0.524233, 1
+
+ Performance counter stats for './omp_vectorized_float':
+
+                 0      r1004:u                                                     
+        1024548777      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       0.527415588 seconds time elapsed
+
+       0.525230000 seconds user
+       0.000000000 seconds sys
+
+
+Running Double Version
+Run 1 (Double):
+2048, 1.570918, 1
+
+ Performance counter stats for './omp_vectorized_double':
+
+                 0      r1004:u                                                     
+        2057682385      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       1.584379607 seconds time elapsed
+
+       1.568573000 seconds user
+       0.001991000 seconds sys
+
+
+Run 2 (Double):
+2048, 1.586406, 1
+
+ Performance counter stats for './omp_vectorized_double':
+
+                 0      r1004:u                                                     
+        2059162815      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       1.590397621 seconds time elapsed
+
+       1.585903000 seconds user
+       0.000000000 seconds sys
+
+
+Run 3 (Double):
+2048, 1.598092, 1
+
+ Performance counter stats for './omp_vectorized_double':
+
+                 0      r1004:u                                                     
+        2060024476      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       1.602055905 seconds time elapsed
+
+       1.595446000 seconds user
+       0.001986000 seconds sys
+
+
+Run 4 (Double):
+2048, 1.572806, 1
+
+ Performance counter stats for './omp_vectorized_double':
+
+                 0      r1004:u                                                     
+        2057519379      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       1.575946325 seconds time elapsed
+
+       1.572093000 seconds user
+       0.000000000 seconds sys
+
+
+Run 5 (Double):
+2048, 1.583659, 1
+
+ Performance counter stats for './omp_vectorized_double':
+
+                 0      r1004:u                                                     
+        2058825657      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       1.587637990 seconds time elapsed
+
+       1.583237000 seconds user
+       0.000000000 seconds sys
+
+
+Run 6 (Double):
+2048, 1.576925, 1
+
+ Performance counter stats for './omp_vectorized_double':
+
+                 0      r1004:u                                                     
+        2058316596      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       1.581102822 seconds time elapsed
+
+       1.576410000 seconds user
+       0.000000000 seconds sys
+
+
+Run 7 (Double):
+2048, 1.569468, 1
+
+ Performance counter stats for './omp_vectorized_double':
+
+                 0      r1004:u                                                     
+        2057456566      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       1.573302452 seconds time elapsed
+
+       1.568900000 seconds user
+       0.000000000 seconds sys
+
+
+Run 8 (Double):
+2048, 1.596063, 1
+
+ Performance counter stats for './omp_vectorized_double':
+
+                 0      r1004:u                                                     
+        2060027161      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       1.599570331 seconds time elapsed
+
+       1.591509000 seconds user
+       0.002983000 seconds sys
+
+
+Run 9 (Double):
+2048, 1.573408, 1
+
+ Performance counter stats for './omp_vectorized_double':
+
+                 0      r1004:u                                                     
+        2057727210      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       1.577093447 seconds time elapsed
+
+       1.571077000 seconds user
+       0.000979000 seconds sys
+
+
+Run 10 (Double):
+2048, 1.594278, 1
+
+ Performance counter stats for './omp_vectorized_double':
+
+                 0      r1004:u                                                     
+        2059338101      r1010:u                                                     
+                 0      r1080:u                                                     
+
+       1.598155875 seconds time elapsed
+
+       1.590603000 seconds user
+       0.002988000 seconds sys
+
+
