@@ -16,9 +16,14 @@ void multiplyAdd(double* a, const double* b, const double* c, size_t size) {
     }
 }
 
-int main() {
+int main(int argc, char *argv[]) {
 
-    const size_t size = DEFAULT_SIZE;
+    size_t size;
+    if (argc > 1) {
+        size = atoi(argv[1]);
+    } else {
+        size = DEFAULT_SIZE;
+    }
     
     double* a = (double*)malloc(size * sizeof(double));
     double* b = (double*)malloc(size * sizeof(double));

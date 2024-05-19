@@ -16,9 +16,14 @@ void multiplyAdd(float* a, const float* b, const float* c, size_t size) {
     }
 }
 
-int main() {
+int main(int argc, char *argv[]) {
 
-    const size_t size = DEFAULT_SIZE;
+    size_t size;
+    if (argc > 1) {
+        size = atoi(argv[1]);
+    } else {
+        size = DEFAULT_SIZE;
+    }
 
     float* a = malloc(size * sizeof(float));
     float* b = malloc(size * sizeof(float));

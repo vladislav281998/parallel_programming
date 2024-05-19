@@ -1,0 +1,100 @@
+Run 1 for size 1024
+1024, 0.518046, 1
+Run 2 for size 1024
+1024, 0.517425, 1
+Run 3 for size 1024
+1024, 0.517691, 1
+Run 4 for size 1024
+1024, 0.518131, 1
+Run 5 for size 1024
+1024, 0.517089, 1
+Run 6 for size 1024
+1024, 0.517328, 1
+Run 7 for size 1024
+1024, 0.517415, 1
+Run 8 for size 1024
+1024, 0.517441, 1
+Run 9 for size 1024
+1024, 0.511619, 1
+Run 10 for size 1024
+1024, 0.511373, 1
+Run 1 for size 2048
+2048, 1.579721, 1
+Run 2 for size 2048
+2048, 1.586758, 1
+Run 3 for size 2048
+2048, 1.592639, 1
+Run 4 for size 2048
+2048, 1.594646, 1
+Run 5 for size 2048
+2048, 1.584297, 1
+Run 6 for size 2048
+2048, 1.584727, 1
+Run 7 for size 2048
+2048, 1.568315, 1
+Run 8 for size 2048
+2048, 1.604985, 1
+Run 9 for size 2048
+2048, 1.593419, 1
+Run 10 for size 2048
+2048, 1.592382, 1
+Run 1 for size 4096
+4096, 3.194562, 1
+Run 2 for size 4096
+4096, 3.195780, 1
+Run 3 for size 4096
+4096, 3.195866, 1
+Run 4 for size 4096
+4096, 3.208244, 1
+Run 5 for size 4096
+4096, 3.214014, 1
+Run 6 for size 4096
+4096, 3.197075, 1
+Run 7 for size 4096
+4096, 3.185104, 1
+Run 8 for size 4096
+4096, 3.179953, 1
+Run 9 for size 4096
+4096, 3.169089, 1
+Run 10 for size 4096
+4096, 3.179658, 1
+Run 1 for size 8192
+8192, 6.480294, 1
+Run 2 for size 8192
+8192, 6.727682, 1
+Run 3 for size 8192
+8192, 7.119962, 1
+Run 4 for size 8192
+8192, 6.822455, 1
+Run 5 for size 8192
+8192, 6.656822, 1
+Run 6 for size 8192
+8192, 6.743377, 1
+Run 7 for size 8192
+8192, 6.826917, 1
+Run 8 for size 8192
+8192, 6.688858, 1
+Run 9 for size 8192
+8192, 6.723777, 1
+Run 10 for size 8192
+8192, 6.855948, 1
+Run 1 for size 16384
+16384, 17.136032, 1
+Run 2 for size 16384
+16384, 16.805325, 1
+Run 3 for size 16384
+16384, 16.544087, 1
+Run 4 for size 16384
+16384, 16.405999, 1
+Run 5 for size 16384
+16384, 16.286867, 1
+Run 6 for size 16384
+16384, 16.127235, 1
+Run 7 for size 16384
+16384, 16.632248, 1
+Run 8 for size 16384
+16384, 16.702344, 1
+Run 9 for size 16384
+16384, 16.774261, 1
+Run 10 for size 16384
+16384, 16.644149, 1
