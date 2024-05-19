@@ -1,0 +1,13 @@
+Perf Analysis:
+FP_COMP_OPS_EXE.SSE2_INTEGER
+"In executing a program, operation of a computer consists of a sequence of instruction cycles, with one machine instruction per cycle. 
+Each instruction cycle is made up of a number of smaller units – Fetch, Indirect, Execute and Interrupt cycles. 
+Each of these cycles involves series of steps, each of which involves the processor registers"
+
+12.355 SSE2 Integer micro-operations were executed.
+
+FP_COMP_OPS_EXE.SSE_FP_PACKED
+1.024.127.154 executed
+
+Packed operations are operations where multiple elements are packed into a single SSE register and the same operation is perfomred on all those packed elements simultaneously.
+So this indicates that our program is utilizing vectorization.

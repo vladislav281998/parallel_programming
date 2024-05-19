@@ -1,0 +1,100 @@
+Run 1 for size 1024
+1024, 0.341515, 1
+Run 2 for size 1024
+1024, 0.342027, 1
+Run 3 for size 1024
+1024, 0.341006, 1
+Run 4 for size 1024
+1024, 0.340992, 1
+Run 5 for size 1024
+1024, 0.340544, 1
+Run 6 for size 1024
+1024, 0.340557, 1
+Run 7 for size 1024
+1024, 0.340284, 1
+Run 8 for size 1024
+1024, 0.341588, 1
+Run 9 for size 1024
+1024, 0.341991, 1
+Run 10 for size 1024
+1024, 0.341540, 1
+Run 1 for size 2048
+2048, 0.676906, 1
+Run 2 for size 2048
+2048, 0.677414, 1
+Run 3 for size 2048
+2048, 0.677758, 1
+Run 4 for size 2048
+2048, 0.678064, 1
+Run 5 for size 2048
+2048, 0.678304, 1
+Run 6 for size 2048
+2048, 0.678328, 1
+Run 7 for size 2048
+2048, 0.677323, 1
+Run 8 for size 2048
+2048, 0.677185, 1
+Run 9 for size 2048
+2048, 0.676867, 1
+Run 10 for size 2048
+2048, 0.677570, 1
+Run 1 for size 4096
+4096, 1.599596, 1
+Run 2 for size 4096
+4096, 1.599792, 1
+Run 3 for size 4096
+4096, 1.607525, 1
+Run 4 for size 4096
+4096, 1.603058, 1
+Run 5 for size 4096
+4096, 1.606299, 1
+Run 6 for size 4096
+4096, 1.593583, 1
+Run 7 for size 4096
+4096, 1.597945, 1
+Run 8 for size 4096
+4096, 1.595501, 1
+Run 9 for size 4096
+4096, 1.616499, 1
+Run 10 for size 4096
+4096, 1.596308, 1
+Run 1 for size 8192
+8192, 3.240863, 1
+Run 2 for size 8192
+8192, 3.241693, 1
+Run 3 for size 8192
+8192, 3.241808, 1
+Run 4 for size 8192
+8192, 3.248722, 1
+Run 5 for size 8192
+8192, 3.244141, 1
+Run 6 for size 8192
+8192, 3.239697, 1
+Run 7 for size 8192
+8192, 3.248018, 1
+Run 8 for size 8192
+8192, 3.251242, 1
+Run 9 for size 8192
+8192, 3.251430, 1
+Run 10 for size 8192
+8192, 3.247491, 1
+Run 1 for size 16384
+16384, 6.661573, 1
+Run 2 for size 16384
+16384, 6.618938, 1
+Run 3 for size 16384
+16384, 6.518751, 1
+Run 4 for size 16384
+16384, 6.505739, 1
+Run 5 for size 16384
+16384, 6.657966, 1
+Run 6 for size 16384
+16384, 6.536521, 1
+Run 7 for size 16384
+16384, 6.579918, 1
+Run 8 for size 16384
+16384, 6.966356, 1
+Run 9 for size 16384
+16384, 7.038573, 1
+Run 10 for size 16384
+16384, 6.516089, 1
