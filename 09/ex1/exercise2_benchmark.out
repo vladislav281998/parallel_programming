@@ -1,0 +1,33 @@
+Running vector benchmark with -O2 optimization
+Run for size 1024
+1024, 1.342338, 1
+Run for size 2048
+2048, 2.682043, 1
+Run for size 4096
+4096, 5.371096, 1
+Run for size 8192
+8192, 10.733375, 1
+Run for size 16384
+16384, 21.569871, 1
+Running optimized vectorisation with O2 benchmark
+Run for size 1024
+1024, 0.259592, 1
+Run for size 2048
+2048, 0.511377, 1
+Run for size 4096
+4096, 1.593159, 1
+Run for size 8192
+8192, 3.235920, 1
+Run for size 16384
+16384, 6.654521, 1
+Running vectorisation program with no optimisation benchmark
+Run for size 1024
+1024, 5.313664, 1
+Run for size 2048
+2048, 10.624190, 1
+Run for size 4096
+4096, 21.517802, 1
+Run for size 8192
+8192, 42.985019, 1
+Run for size 16384
+16384, 86.158516, 1
