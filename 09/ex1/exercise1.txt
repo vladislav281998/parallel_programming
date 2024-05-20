@@ -1,0 +1,25 @@
+Size         | No Optimization | Only -O2      | -O2 + vectorisation  | Speedup (Only -O2)   | Speedup (-O2 + vectorisation)
+1024         | 5.313664        | 1.342338      | 0.259592             | 3.96                 | 20.47
+2048         | 10.624190       | 2.682043      | 0.511377             | 3.96                 | 20.78
+4096         | 21.517802       | 5.371096      | 1.593159             | 4.01                 | 13.51
+8192         | 42.985019       | 10.733375     | 3.235920             | 4.01                 | 13.29
+16384        | 86.158516       | 21.569871     | 6.654521             | 3.99                 | 12.95
+
+
+For vectorisation was used -ftree-vectorize flag, and to switch off any optimisation was used -OO flag
+
+Performance Gain:
+Both the versions with optimisation show significant speedups compared to the version with no optimization.
+The vectorised version with optimisation achieves much higher speedups than the only optimised version, 
+indicating that it is more efficient, possibly due to better utilization of vectorization and other optimizations.
+
+Correctness:
+Assuming the outputs, are correct and consistent across all runs, the results are correct.
+Each result's consistency indicates that vectorization did not introduce any numerical errors.
+
+Effect of Problem Size:
+
+The speedups generally increase with larger problem sizes, which is expected. 
+Larger datasets benefit more from vectorization as more data can be processed in parallel.
+
+
