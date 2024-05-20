@@ -11,3 +11,13 @@ FP_COMP_OPS_EXE.SSE_FP_PACKED
 
 Packed operations are operations where multiple elements are packed into a single SSE register and the same operation is perfomred on all those packed elements simultaneously.
 So this indicates that our program is utilizing vectorization.
+
+Comparison to exercise 1 and 2:
+exercise 2:
+Both amounts for packed and Integer micro-operations are nearly the same.
+The execution times are also near identical. The implementation with compiler-specific intrinsics takes a bit longer for smaller sizes, and is a bit more efficient for larger sizes.
+
+exercise 1:
+Exercise 1 has less micro operations but again the packed operations are near identical. This is to be expected as all three implementations make use of SIMD.
+Performance-wise the implementation in exercise 3 takes longer up to a problem size of 4096. From there on both implementations are identical in performance.
+This could be due to optimizations that the compiler makes which are not possible with just intrinsics.
