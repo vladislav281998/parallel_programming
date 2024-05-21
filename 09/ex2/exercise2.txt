@@ -16,7 +16,7 @@ Monitor specific hardware-related events:
   -> This suggests that the program performed a relatively low number of scalar SSE single-precision operations, indicating either limited use of these operations or highly efficient handling by the compiler and CPU.
 
   -SSE Double-Precision (r1010): Count: 1,024,241,596 operations
-  -> The very high count here reflects extensive utilization of double-precision SSE operations. This is consistent with your program's operation, as it involves double-precision floating-point arithmetic (double data type) in a computationally intensive loop.
+  -> The very high count here reflects extensive utilization of double-precision SSE operations. This is consistent with the program's operation, as it involves double-precision floating-point arithmetic (double data type) in a computationally intensive loop.
 
   Results for Double Implementation:
   -Scalar SSE Single-Precision (r1008): Count: 44,529 operations
