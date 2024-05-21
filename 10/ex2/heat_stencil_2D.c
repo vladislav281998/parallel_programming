@@ -7,6 +7,15 @@
 #define RESOLUTION_WIDTH 50
 #define RESOLUTION_HEIGHT 50
 
+// Heat diffusion constants
+#define HEAT_DIFFUSION_FACTOR (0.01)
+
+// Enumeration for the execution mode
+typedef enum {
+    SERIAL_MODE,
+    PARALLEL_MODE
+} ExecutionMode;
+
 #define PERROR fprintf(stderr, "%s:%d: error: %s\n", __FILE__, __LINE__, strerror(errno))
 #define PERROR_GOTO(label) \
 	do { \
@@ -14,6 +23,8 @@
 		goto label; \
 	} while (0)
 
+// Declaration of the functions used in the program to avoid implicit declaration warnings
+void assignNewValue(double *A, double *B, int x, int y, int source_x, int source_y, int N);
 
 // -- vector utilities --
 
@@ -23,12 +34,104 @@ void printTemperature(double *m, int N, int M);
 
 // -- simulation code ---
 
+// Function that executes the heat propagation step in parallel using OpenMP
+void executeParallelStep(double **B_param, double **A_param, int N, int source_x, int source_y)
+{
+    double *B = *B_param;
+    double *A = *A_param;
+
+// Parallel execution of the heat propagation step using OpenMP
+#pragma omp parallel for collapse(2) schedule(guided)
+    for (int x = 0; x < N; x++)
+    {
+        for (int y = 0; y < N; y++)
+        {
+            assignNewValue(A, B, x, y, source_x, source_y, N);
+        }
+    }
+
+    // Swap the temperature arrays for the next iteration
+    double *temp = B;
+    B = A;
+    A = temp;
+    *B_param = B;
+    *A_param = A;
+}
+// Function that executes the heat propagation step in serial
+void executeSerialStep(double **B_param, double **A_param, int N, int source_x, int source_y)
+{
+    double *B = *B_param;
+    double *A = *A_param;
+
+    // Serial execution of the heat propagation step
+    for (int y = 0; y < N; y++)
+    {
+        for (int x = 0; x < N; x++)
+        {
+            assignNewValue(A, B, x, y, source_x, source_y, N);
+        }
+    }
+
+    // Swap the temperature arrays for the next iteration
+    double *temp = B;
+    B = A;
+    A = temp;
+    *B_param = B;
+    *A_param = A;
+}
+// Function that calculates the new temperature value based on the neighboring cells
+double calculateNewValue(double leftVal, double rightVal, double upperVal, double lowerVal, double centerVal)
+{
+    return centerVal + HEAT_DIFFUSION_FACTOR * ((leftVal - 273) + (rightVal - 273) - 4 * (centerVal - 273) + (lowerVal - 273) + (upperVal - 273));
+}
+
+// Function that assigns the new temperature value to the current cell based on the neighboring cells
+void assignNewValue(double *A, double *B, int x, int y, int source_x, int source_y, int N)
+{
+    if (x == source_x && y == source_y)
+    {
+        B[IND(x, y)] = A[IND(x, y)];
+    }
+    else
+    {
+        // Calculate the indices of the neighboring cells
+        int leftIdx_x = (x == 0) ? x : x - 1;
+        int leftIdx_y = y;
+        int rightIdx_x = (x == N - 1) ? x : x + 1;
+        int rightIdx_y = y;
+        int centerIdx_x = x;
+        int centerIdx_y = y;
+        int upperIdx_x = x;
+        int upperIdx_y = (y == N - 1) ? y : y + 1;
+        int lowerIdx_x = x;
+        int lowerIdx_y = (y == 0) ? y : y - 1;
+
+        // Calculate the new temperature value based on the neighboring cells
+        B[IND(x, y)] = calculateNewValue(
+            A[IND(leftIdx_x, leftIdx_y)],
+            A[IND(rightIdx_x, rightIdx_y)],
+            A[IND(upperIdx_x, upperIdx_y)],
+            A[IND(lowerIdx_x, lowerIdx_y)],
+            A[IND(centerIdx_x, centerIdx_y)]);
+    }
+}
+
 int main(int argc, char **argv) {
-    // 'parsing' optional input parameter = problem size
-    int N = 200;
+    int N = 200; // Default problem size
     if (argc > 1) {
         N = atoi(argv[1]);
     }
+
+    // Set the execution mode based on the command-line argument
+    int executionMode = SERIAL_MODE; // Default execution mode
+    if (argc > 2) {
+        if (strcmp(argv[2], "parallel") == 0) {
+            executionMode = PARALLEL_MODE;
+        } else if (strcmp(argv[2], "serial") != 0) {
+            printf("Unknown execution mode '%s'. Using default 'serial'.\n", argv[2]);
+        }
+    }
+
     int T = N * 10;
     printf("Computing heat-distribution for room size %dX%d for T=%d timesteps\n", N, N, T);
 
@@ -62,8 +165,18 @@ int main(int argc, char **argv) {
     if(!B) PERROR_GOTO(error_b);
     // for each time step ..
     for (int t = 0; t < T; t++) {
-        // todo implement heat propagation
-        // todo make sure the heat source stays the same
+        // Execute the heat propagation step based on the selected execution mode
+        switch (executionMode) {
+            case SERIAL_MODE:
+                executeSerialStep(&B, &A, N, source_x, source_y);
+                break;
+            case PARALLEL_MODE:
+                executeParallelStep(&B, &A, N, source_x, source_y);
+                break;
+            default:
+                printf("Invalid execution mode. Value was %d\n", executionMode);
+                break;
+        }
 
         // every 1000 steps show intermediate step
         if (!(t % 1000)) {
