@@ -1,0 +1,23 @@
+COLLAPSE: 
+Specifies how many loops in a nested loop should be collapsed into one large iteration space and divided according to the schedule clause.
+The sequential execution of the iterations in all associated loops determines the order of the iterations in the collapsed iteration space.
+
+So for our loops:
+for (int y = 0; y < N; y++)
+    {
+        for (int x = 0; x < N; x++)
+        {
+            assignNewValue(A, B, x, y, source_x, source_y, N);
+        }
+    }
+
+The collapse(2) clause combines the two loops into one. The OpenMP runtime calculates a single, combined iteration variable to represent both x and y.  
+Each thread is then assigned a contiguous chunk of this combined iteration space.
+
+This works as long as the iterations of the inner loop do not depend on the outer loop:
+"If execution of any associated loop changes any of the values used to compute any of the iteration counts, then the behavior is unspecified."
+
+In combination with schedule(guided) the OpenMP runtime can dynamically assign varying-sized chunks of work to threads, potentially improving load balancing.
+
+Compared to using seperate parallel regions, collapse reduces the overhead from managing multiple parallel regions, and can potentially distribute the chunks more efficiently.
+Additionaly when the loop counts are small, there might not be enough work to keep all threads busy, this can also be avoided by using collapse.
