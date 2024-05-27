@@ -1,0 +1,25 @@
+Observations
+Sequential and Sequential Recursive Performance:
+
+Both the sequential and sequential recursive implementations show very low computation times across all sizes.
+The sequential recursive times are generally on par with or slightly faster than the sequential times.
+
+Parallel Performance:
+
+The parallel implementation takes significantly more time than the sequential and sequential recursive implementations for all sizes.
+Despite being parallel, it does not demonstrate a reduction in computation time, suggesting inefficiencies.
+Main Bottleneck of Parallel Implementation
+The primary bottleneck in the parallel implementation appears to be overhead associated with parallel processing. This includes:
+
+Task Creation and Management:
+
+Dividing the problem into parallel tasks, managing these tasks, and then combining the results incurs overhead 
+that can outweigh the benefits of parallelism for small problem sizes.
+
+Synchronization Costs:
+
+Synchronizing the results from different threads or processes can add significant overhead, especially i
+f the tasks are small and numerous.
+Communication Overhead:
+
+Communication between threads or processes, particularly in shared memory architectures, can introduce latency.
