@@ -1,0 +1,31 @@
+Running sequential version
+Run for size 3
+Delannoy number for D(3, 3) = 63, time taken 0.000001
+Delannoy recursive number for D(3, 3) = 63, time taken 0.000002
+Run for size 6
+Delannoy number for D(6, 6) = 8989, time taken 0.000001
+Delannoy recursive number for D(6, 6) = 8989, time taken 0.000061
+Run for size 9
+Delannoy number for D(9, 9) = 1462563, time taken 0.000002
+Delannoy recursive number for D(9, 9) = 1462563, time taken 0.009909
+Run for size 12
+Delannoy number for D(12, 12) = 251595969, time taken 0.000002
+Delannoy recursive number for D(12, 12) = 251595969, time taken 1.708819
+Run for size 15
+Delannoy number for D(15, 15) = 44642381823, time taken 0.000003
+Delannoy recursive number for D(15, 15) = 44642381823, time taken 303.335558
+Running benchmark for parallel version
+Run for size 3
+Delannoy number for D(3, 3) = 63, time taken 0.000012
+Run for size 6
+Delannoy number for D(6, 6) = 8989, time taken 0.000005
+Run for size 9
+Delannoy number for D(9, 9) = 1462563, time taken 0.000007
+Run for size 12
+Delannoy number for D(12, 12) = 251595969, time taken 0.000010
+Run for size 15
+Delannoy number for D(15, 15) = 44642381823, time taken 0.000007
+Running benchmark for parallel version 12 Thread
+Delannoy number for D(12, 12) = 251595969, time taken 0.000810
+0.00user 0.00system 0:00.00elapsed 50%CPU (0avgtext+0avgdata 2528maxresident)k
+0inputs+0outputs (0major+145minor)pagefaults 0swaps
