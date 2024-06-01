@@ -1,0 +1,11 @@
+For the sequential version the biggest part of the workload is due to the resid function.
+There are 147 calls to this function and each call taking up nearly 40ms.
+To improve performance here we can use #pragma omp parallel for collapse(2) private(u1, u2) to vectorize the loops.
+
+The next highest contributor to workload is the psinv function, which can also be improved with #pragma omp parallel for collapse(2) private(i3, i2, r1, r2).
+
+The function interp can be parallelized with multiple #pragma omp for.
+
+Peformance:
+We can see that 6 threads is faster than 12 threads, which means we profit from parralelism to a certain degree.
+Also the parallel execution is slower than the sequential version, which is to be expected due to the added overhead.

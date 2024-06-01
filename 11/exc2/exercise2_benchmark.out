@@ -1,0 +1,56 @@
+make: Nothing to be done for 'all'.
+Sequential Benchmark:
+Run 1 took 6.911 seconds
+Run 2 took 6.904 seconds
+Run 3 took 6.909 seconds
+Run 4 took 6.895 seconds
+Run 5 took 6.922 seconds
+Run 6 took 6.860 seconds
+Run 7 took 6.892 seconds
+Run 8 took 6.925 seconds
+Run 9 took 6.879 seconds
+Run 10 took 6.830 seconds
+Parallel Benchmark (1 threads):
+Run 1 took 7.106 seconds
+Run 2 took 7.038 seconds
+Run 3 took 6.979 seconds
+Run 4 took 7.037 seconds
+Run 5 took 6.974 seconds
+Run 6 took 7.035 seconds
+Run 7 took 7.028 seconds
+Run 8 took 6.966 seconds
+Run 9 took 7.036 seconds
+Run 10 took 7.045 seconds
+Parallel Benchmark (2 threads):
+Run 1 took 5.305 seconds
+Run 2 took 5.323 seconds
+Run 3 took 5.326 seconds
+Run 4 took 5.290 seconds
+Run 5 took 5.300 seconds
+Run 6 took 5.317 seconds
+Run 7 took 5.319 seconds
+Run 8 took 5.294 seconds
+Run 9 took 5.325 seconds
+Run 10 took 5.320 seconds
+Parallel Benchmark (6 threads):
+Run 1 took 4.513 seconds
+Run 2 took 4.429 seconds
+Run 3 took 4.712 seconds
+Run 4 took 4.454 seconds
+Run 5 took 4.414 seconds
+Run 6 took 4.541 seconds
+Run 7 took 4.338 seconds
+Run 8 took 4.497 seconds
+Run 9 took 4.441 seconds
+Run 10 took 4.467 seconds
+Parallel Benchmark (12 threads):
+Run 1 took 4.935 seconds
+Run 2 took 4.922 seconds
+Run 3 took 4.895 seconds
+Run 4 took 4.920 seconds
+Run 5 took 5.001 seconds
+Run 6 took 4.851 seconds
+Run 7 took 5.229 seconds
+Run 8 took 4.906 seconds
+Run 9 took 4.915 seconds
+Run 10 took 4.941 seconds
