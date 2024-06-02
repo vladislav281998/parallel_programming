@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <omp.h>
+#include <omp.h> // Added for OpenMP parallelization
+
 #include "globals.h"
 #include "randdp.h"
 #include "timers.h"
@@ -334,19 +335,33 @@ static void setup(int *n1, int *n2, int *n3)
   ng[lt][0] = nx[lt];
   ng[lt][1] = ny[lt];
   ng[lt][2] = nz[lt];
-  int sum;
 
+  int sum; // Initialize sum variable to store the sum of ng[k][ax] values
+
+  // Original loop:
+  // for (k = lt-1; k >= 1; k--) {
+  //   for (ax = 0; ax < 3; ax++) {
+  //     ng[k][ax] = ng[k+1][ax]/2;
+  //   }
+  // }
+
+// Parallelize the outer loop using OpenMP
 #pragma omp parallel for private(ax, sum)
     for (ax = 0; ax < 3; ax++) {
-        sum = ng[lt][ax];
+        sum = ng[lt][ax]; // Initialize sum with the value at ng[lt][ax] for the current axis
+
+        // Updating sum to be half its previous value in each iteration
         for (k = lt-1; k >= 1; k--) {
-            sum /= 2;
+            sum /= 2; 
         }
+
+        // Updating ng[k][ax] with adjusted sum values
         for (k = lt-1; k >= 1; k--) {
-            ng[k][ax] = sum * (1 << k-1);
+            ng[k][ax] = sum * (1 << k-1);  // Multiply sum by 2^(k-1) and assign it to ng[k][ax] 
         }
     }
 
+// Parallelize the loop using OpenMP
 #pragma omp for
   for (k = lt; k >= 1; k--) {
     nx[k] = ng[k][0];
@@ -354,8 +369,6 @@ static void setup(int *n1, int *n2, int *n3)
     nz[k] = ng[k][2];
   }
 
-
-//#pragma omp for
   for (k = lt; k >= 1; k--) {
     for (ax = 0; ax < 3; ax++) {
       mi[k][ax] = 2 + ng[k][ax];
@@ -378,10 +391,13 @@ static void setup(int *n1, int *n2, int *n3)
   *n3 = 3 + ie3 - is3;
 
   ir[lt] = 0;
+
+// Parallelize the loop with vectorization using OpenMP
 #pragma omp simd
   for (j = lt-1; j >= 1; j--) {
-    ir[j] = ir[j+1]+ONE*m1[j+1]*m2[j+1]*m3[j+1];
+    ir[j] = ir[j+1]+ONE*m1[j+1]*m2[j+1]*m3[j+1]; // Each iteration only relies on values from the next index, so it can be vectorized
   }
+
   if (debug_vec[1] >= 1) {
     printf(" in setup, \n");
     printf(" k  lt  nx  ny  nz  n1  n2  n3 is1 is2 is3 ie1 ie2 ie3\n");
@@ -466,15 +482,21 @@ static void psinv(void *or, void *ou, int n1, int n2, int n3,
   double r1[M], r2[M];
 
   if (timeron) timer_start(T_psinv);
+
+// Parallelize the loop by collapsing the two outer loops using OpenMP
 #pragma omp parallel for collapse(2) private(i3, i2, r1, r2)
   for (i3 = 1; i3 < n3-1; i3++) {
     for (i2 = 1; i2 < n2-1; i2++) {
+
+      // First inner loop from 0 to n1
       for (i1 = 0; i1 < n1; i1++) {
         r1[i1] = r[i3][i2-1][i1] + r[i3][i2+1][i1]
                + r[i3-1][i2][i1] + r[i3+1][i2][i1];
         r2[i1] = r[i3-1][i2-1][i1] + r[i3-1][i2+1][i1]
                + r[i3+1][i2-1][i1] + r[i3+1][i2+1][i1];
       }
+
+      // Second inner loop from 1 to n1-1 (different ranges)
       for (i1 = 1; i1 < n1-1; i1++) {
         u[i3][i2][i1] = u[i3][i2][i1]
                       + c[0] * r[i3][i2][i1]
@@ -529,18 +551,23 @@ static void resid(void *ou, void *ov, void *or, int n1, int n2, int n3,
   double u1[M], u2[M];
 
   if (timeron) timer_start(T_resid);
+
+// Parallelize the loop by collapsing the two outer loops using OpenMP
 #pragma omp parallel for collapse(2) private(u1, u2)
   for (i3 = 1; i3 < n3-1; i3++) {
     for (i2 = 1; i2 < n2-1; i2++) {
         double u1[n1];
         double u2[n1];
 
+      // First inner loop from 0 to n1
       for (i1 = 0; i1 < n1; i1++) {
         u1[i1] = u[i3][i2-1][i1] + u[i3][i2+1][i1]
                + u[i3-1][i2][i1] + u[i3+1][i2][i1];
         u2[i1] = u[i3-1][i2-1][i1] + u[i3-1][i2+1][i1]
                + u[i3+1][i2-1][i1] + u[i3+1][i2+1][i1];
       }
+
+      // Second inner loop from 1 to n1-1 (different ranges)
       for (i1 = 1; i1 < n1-1; i1++) {
         r[i3][i2][i1] = v[i3][i2][i1]
                       - a[0] * u[i3][i2][i1]
@@ -677,7 +704,10 @@ static void interp(void *oz, int mm1, int mm2, int mm3,
   if (n1 != 3 && n2 != 3 && n3 != 3) {
     for (i3 = 0; i3 < mm3-1; i3++) {
       for (i2 = 0; i2 < mm2-1; i2++) {
+// Starting a new parallel region here
 #pragma omp parralel
+
+// Divide the loop iterations among the threads using OpenMP 
 #pragma omp for
         for (i1 = 0; i1 < mm1; i1++) {
           z1[i1] = z[i3][i2+1][i1] + z[i3][i2][i1];

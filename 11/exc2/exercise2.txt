@@ -1,11 +1,94 @@
-For the sequential version the biggest part of the workload is due to the resid function.
-There are 147 calls to this function and each call taking up nearly 40ms.
-To improve performance here we can use #pragma omp parallel for collapse(2) private(u1, u2) to vectorize the loops.
+1. Parallelization of larger workloads:
+-As seen from the exercise 1 from the sequential version the biggest part of the workload is due to the `resid` function. There are 147 calls to this function and each call taking up nearly 40ms. To improve performance here we can use `#pragma omp parallel for collapse(2) private(u1, u2)` to vectorize the loops.
+```
+// Parallelize the loop by collapsing the two outer loops using OpenMP
+#pragma omp parallel for collapse(2) private(u1, u2)
+  for (i3 = 1; i3 < n3-1; i3++) {
+    for (i2 = 1; i2 < n2-1; i2++) {
+        double u1[n1];
+        double u2[n1];
 
-The next highest contributor to workload is the psinv function, which can also be improved with #pragma omp parallel for collapse(2) private(i3, i2, r1, r2).
+      // First inner loop from 0 to n1
+      for (i1 = 0; i1 < n1; i1++) {
+        u1[i1] = u[i3][i2-1][i1] + u[i3][i2+1][i1]
+               + u[i3-1][i2][i1] + u[i3+1][i2][i1];
+        u2[i1] = u[i3-1][i2-1][i1] + u[i3-1][i2+1][i1]
+               + u[i3+1][i2-1][i1] + u[i3+1][i2+1][i1];
+      }
 
-The function interp can be parallelized with multiple #pragma omp for.
+      // Second inner loop from 1 to n1-1 (different ranges)
+      for (i1 = 1; i1 < n1-1; i1++) {
+        r[i3][i2][i1] = v[i3][i2][i1]
+                      - a[0] * u[i3][i2][i1]
+        //-------------------------------------------------------------------
+        //  Assume a[1] = 0      (Enable 2 lines below if a[1] not= 0)
+        //-------------------------------------------------------------------
+        //            - a[1] * ( u[i3][i2][i1-1] + u[i3][i2][i1+1]
+        //                     + u1[i1] )
+        //-------------------------------------------------------------------
+                      - a[2] * ( u2[i1] + u1[i1-1] + u1[i1+1] )
+                      - a[3] * ( u2[i1-1] + u2[i1+1] );
+      }
+    }
+  }
+```
+-The next highest contributor to workload is the `psinv` function, which can also be improved with `#pragma omp parallel for collapse(2) private(i3, i2, r1, r2)`.
+```
+// Parallelize the loop by collapsing the two outer loops using OpenMP
+#pragma omp parallel for collapse(2) private(i3, i2, r1, r2)
+  for (i3 = 1; i3 < n3-1; i3++) {
+    for (i2 = 1; i2 < n2-1; i2++) {
 
-Peformance:
-We can see that 6 threads is faster than 12 threads, which means we profit from parralelism to a certain degree.
-Also the parallel execution is slower than the sequential version, which is to be expected due to the added overhead.
+      // First inner loop from 0 to n1
+      for (i1 = 0; i1 < n1; i1++) {
+        r1[i1] = r[i3][i2-1][i1] + r[i3][i2+1][i1]
+               + r[i3-1][i2][i1] + r[i3+1][i2][i1];
+        r2[i1] = r[i3-1][i2-1][i1] + r[i3-1][i2+1][i1]
+               + r[i3+1][i2-1][i1] + r[i3+1][i2+1][i1];
+      }
+
+      // Second inner loop from 1 to n1-1 (different ranges)
+      for (i1 = 1; i1 < n1-1; i1++) {
+        u[i3][i2][i1] = u[i3][i2][i1]
+                      + c[0] * r[i3][i2][i1]
+                      + c[1] * ( r[i3][i2][i1-1] + r[i3][i2][i1+1]
+                               + r1[i1] )
+                      + c[2] * ( r2[i1] + r1[i1-1] + r1[i1+1] );
+        //--------------------------------------------------------------------
+        // Assume c[3] = 0    (Enable line below if c[3] not= 0)
+        //--------------------------------------------------------------------
+        //            + c[3] * ( r2[i1-1] + r2[i1+1] )
+        //--------------------------------------------------------------------
+      }
+    }
+  }
+```
+-The function interp can be parallelized with multiple #pragma omp for.
+```
+if (timeron) timer_start(T_interp);
+  if (n1 != 3 && n2 != 3 && n3 != 3) {
+    for (i3 = 0; i3 < mm3-1; i3++) {
+      for (i2 = 0; i2 < mm2-1; i2++) {
+// Starting a new parallel region here
+#pragma omp parralel
+
+// Divide the loop iterations among the threads using OpenMP 
+#pragma omp for
+        for (i1 = 0; i1 < mm1; i1++) {
+          z1[i1] = z[i3][i2+1][i1] + z[i3][i2][i1];
+          z2[i1] = z[i3+1][i2][i1] + z[i3][i2][i1];
+          z3[i1] = z[i3+1][i2+1][i1] + z[i3+1][i2][i1] + z1[i1];
+        }
+#pragma omp for
+        for (i1 = 0; i1 < mm1-1; i1++) {
+          u[2*i3][2*i2][2*i1] = u[2*i3][2*i2][2*i1]
+                              + z[i3][i2][i1];
+          u[2*i3][2*i2][2*i1+1] = u[2*i3][2*i2][2*i1+1]
+                                + 0.5 * (z[i3][i2][i1+1] + z[i3][i2][i1]);
+        }
+...
+```
+
+2. Performance analysis between parallelism and sequentiell:
+- Parallel execution with 1 thread is slightly slower than sequential.
+- Increasing threads to 2, 6, and 12 improves performance compared to sequential execution, with 6 threads showing the best performance at 4.48 seconds.
