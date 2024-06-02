@@ -1,0 +1,32 @@
+A big part of the workload in the serial version is taken up by resid function. 
+This function gets called 147 times with a for loop that can be parallelized with omp for.
+
+The psinv function is similar to the resid function. The for loop in it can also be parallelized with omp for.
+
+The function vranlc in randdp.c takes up a lot of time, In this case, each iteration of the loop depends only on the current
+values of the variables x and y[], which change inside the loop, but there are no dependencies between different iterations. 
+Thus, this loop can be safely parallelized.
+
+Most of the time computation time is taken up by the wtime function. This function cant be parallelized, 
+but since this function only gets used to measure the code this is not really significant.
+
+all the remaining three methods (interp, rprj3,norm2u3) can also be partially paralyzed.
+
+
+gprof:
+Flat Profile:
+Displays the amount of time (in percentage and absolute values) spent on executing each function, as well as the number 
+of times each function was called.
+
+Call Graph:
+
+Provides information about function calls, including which functions were called, 
+from which functions they were called, and how much time was spent on each call. 
+This section helps to understand which functions are the most time-consuming and how they interact with each other.
+
+Usefulness of This Information:
+
+gprof helps to identify functions that occupy the most execution time in the program. 
+This allows focusing optimization efforts on these specific parts of the code.
+
+
