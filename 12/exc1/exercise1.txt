@@ -1,0 +1,136 @@
+Exercise 1 (1.5 Points)
+Description:
+Optimize the execution time of a program on a scalar architecture by applying strength reduction to the following code snippets.
+
+Tasks:
+Apply strength reduction.
+State under which circumstances the transformation should be applied.
+Compare the assembly code of the original snippets with your transformation.
+Investigate how the compiler optimizes the snippets using -O3 optimization flag.
+
+Code Snippets and Strength Reduction Answers:
+
+a) Original Code:
+unsigned c2 = 32 * c1;
+Strength Reduction Transformation:
+Answer: 
+
+Circumstances for Transformation:
+Answer:
+
+Assembly Code Comparison:
+Original:
+Answer:
+Transformed:
+Answer:
+
+Compiler Optimization Investigation:
+Answer:
+
+b) Original Code:
+unsigned c2 = 15 * c1;
+Strength Reduction Transformation:
+Answer: 
+
+Circumstances for Transformation:
+Answer:
+
+Assembly Code Comparison:
+Original:
+Answer:
+Transformed:
+Answer:
+
+Compiler Optimization Investigation:
+Answer:
+
+c) Original Code:
+unsigned c2 = 96 * c1;
+Strength Reduction Transformation:
+Answer: 
+
+Circumstances for Transformation:
+Answer:
+
+Assembly Code Comparison:
+Original:
+Answer:
+Transformed:
+Answer:
+
+Compiler Optimization Investigation:
+Answer:
+
+d) Original Code:
+unsigned c2 = 0.125 * c1;
+Strength Reduction Transformation:
+Answer: 
+
+Circumstances for Transformation:
+Answer:
+
+Assembly Code Comparison:
+Original:
+Answer:
+Transformed:
+Answer:
+
+Compiler Optimization Investigation:
+Answer:
+
+e) Original Code:
+unsigned sum_fifth = 0;
+for (int i = 0; i < N / 5; ++i) {
+    sum_fifth += a[5 * i];
+}
+Strength Reduction Transformation:
+Answer: 
+
+Circumstances for Transformation:
+Answer:
+
+Assembly Code Comparison:
+Original:
+Answer:
+Transformed:
+Answer:
+
+Compiler Optimization Investigation:
+Answer:
+
+f) Original Code:
+for (int i = 0; i < N; ++i) {
+    a[i] += i / 5.3;
+}
+Strength Reduction Transformation:
+Answer: 
+
+Circumstances for Transformation:
+Answer:
+
+Assembly Code Comparison:
+Original:
+Answer:
+Transformed:
+Answer:
+
+Compiler Optimization Investigation:
+Answer:
+
+g) Original Code:
+float c2 = -1 * c1;
+Strength Reduction Transformation:
+Answer: 
+
+Circumstances for Transformation:
+Answer:
+
+Assembly Code Comparison:
+Original:
+Answer:
+Transformed:
+Answer:
+
+Compiler Optimization Investigation:
+Answer:
+

@@ -1,0 +1,125 @@
+Exercise 2 (1.5 Points)
+Description:
+Investigate the impact of specific loop transformations on performance, and compare the performance counters of the original and transformed code. Variables and array elements are of type int, unless stated otherwise.
+
+Tasks:
+Create a test program for each configuration, compile it with gcc using -O3, and profile it with perf on LCC3.
+
+Loop Transformations and Performance Analysis:
+
+1) Apply loop unrolling:
+Original Code:
+for (int i = 0; i < N - 1; ++i) {
+    a[i] = b[i] + b[i + 1];
+}
+Transformation (Loop Unrolling):
+Answer: 
+
+Performance Comparison:
+Original Code Counters:
+Answer:
+Transformed Code Counters:
+Answer:
+
+2) Apply loop-invariant code motion (a is of type double *):
+Original Code:
+for (int i = 0; i < N; ++i) {
+    a[i] *= hypot(0.3, 0.4);
+}
+Transformation (Loop-Invariant Code Motion):
+Answer: 
+
+Performance Comparison:
+Original Code Counters:
+Answer:
+Transformed Code Counters:
+Answer:
+
+3) Apply loop unswitching:
+Original Code:
+for (int i = 0; i < N; ++i) {
+    if (N % 2) {
+        a[i] = b[i] + 5;
+    } else {
+        a[i] = c[i] + 5;
+    }
+}
+Transformation (Loop Unswitching):
+Answer: 
+
+Performance Comparison:
+Original Code Counters:
+Answer:
+Transformed Code Counters:
+Answer:
+
+4) Apply loop fission/distribution:
+Original Code:
+for (int i = 0; i < N; ++i) {
+    sum_a += a[i];
+    sum_b += b[i];
+    sum_c += c[i];
+}
+Transformation (Loop Fission/Distribution):
+Answer: 
+
+Performance Comparison:
+Original Code Counters:
+Answer:
+Transformed Code Counters:
+Answer:
+
+5) Apply loop peeling and loop fusion/combination:
+Original Code:
+int min = a[0];
+for (int i = 1; i < N; ++i) {
+    min = (a[i] < min) ? a[i] : min;
+}
+for (int i = 0; i < N; ++i) {
+    sum += a[i];
+}
+Transformation (Loop Peeling and Fusion):
+Answer: 
+
+Performance Comparison:
+Original Code Counters:
+Answer:
+Transformed Code Counters:
+Answer:
+
+6) Apply loop splitting:
+Original Code:
+for (int i = 0; i < N; ++i) {
+    if (i % 2) {
+        a[i] = b[i] + 4;
+    } else {
+        a[i] = c[i] + 5;
+    }
+}
+Transformation (Loop Splitting):
+Answer: 
+
+Performance Comparison:
+Original Code Counters:
+Answer:
+Transformed Code Counters:
+Answer:
+
+7) Apply loop tiling (a, b, and c are of type double):
+Original Code:
+for (int i = 0; i < N; ++i) {
+    for (int j = 0; j < N; ++j) {
+        for (int k = 0; k < N; ++k) {
+            c[i][j] = a[i][k] * b[k][j];
+        }
+    }
+}
+Transformation (Loop Tiling):
+Answer: 
+
+Performance Comparison:
+Original Code Counters:
+Answer:
+Transformed Code Counters:
+Answer:
+
