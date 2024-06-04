@@ -395,7 +395,7 @@ static void setup(int *n1, int *n2, int *n3)
 // Parallelize the loop with vectorization using OpenMP
 #pragma omp simd
   for (j = lt-1; j >= 1; j--) {
-    ir[j] = ir[j+1]+ONE*m1[j+1]*m2[j+1]*m3[j+1]; // Each iteration only relies on values from the next index, so it can be vectorized
+    ir[j] = ir[j+1]+ONE*m1[j+1]*m2[j+1]*m3[j+1];
   }
 
   if (debug_vec[1] >= 1) {
@@ -496,7 +496,7 @@ static void psinv(void *or, void *ou, int n1, int n2, int n3,
                + r[i3+1][i2-1][i1] + r[i3+1][i2+1][i1];
       }
 
-      // Second inner loop from 1 to n1-1 (different ranges)
+      // Second inner loop from 1 to n1-1
       for (i1 = 1; i1 < n1-1; i1++) {
         u[i3][i2][i1] = u[i3][i2][i1]
                       + c[0] * r[i3][i2][i1]
@@ -567,7 +567,7 @@ static void resid(void *ou, void *ov, void *or, int n1, int n2, int n3,
                + u[i3+1][i2-1][i1] + u[i3+1][i2+1][i1];
       }
 
-      // Second inner loop from 1 to n1-1 (different ranges)
+      // Second inner loop from 1 to n1-1
       for (i1 = 1; i1 < n1-1; i1++) {
         r[i3][i2][i1] = v[i3][i2][i1]
                       - a[0] * u[i3][i2][i1]
@@ -704,10 +704,10 @@ static void interp(void *oz, int mm1, int mm2, int mm3,
   if (n1 != 3 && n2 != 3 && n3 != 3) {
     for (i3 = 0; i3 < mm3-1; i3++) {
       for (i2 = 0; i2 < mm2-1; i2++) {
-// Starting a new parallel region here
+// Starting a new parallel region
 #pragma omp parralel
 
-// Divide the loop iterations among the threads using OpenMP 
+// Divide the loop iterations among the threads
 #pragma omp for
         for (i1 = 0; i1 < mm1; i1++) {
           z1[i1] = z[i3][i2+1][i1] + z[i3][i2][i1];
