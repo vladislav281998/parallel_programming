@@ -13,53 +13,92 @@ Code Snippets and Strength Reduction Answers:
 a) Original Code:
 unsigned c2 = 32 * c1;
 Strength Reduction Transformation:
-Answer: 
+Answer: c2 = c1 << 5;
 
 Circumstances for Transformation:
-Answer:
+Answer: 
+The transformation should be applied if the cost of performing the bit-shift operation is less than the cost of performing the multiplication. This is typically true in most scalar architectures, as bit-shifting is a simpler and faster operation compared to multiplication.
 
 Assembly Code Comparison:
-Original:
-Answer:
-Transformed:
-Answer:
+Original: a:
+        mov     esi, edi
+        xor     eax, eax
+        mov     edi, OFFSET FLAT:.LC0
+        sal     esi, 5
+        jmp     printf
+Answer: It used the shift operation (sal esi, 5) instead of multiplication by 32.
+Transformed: a_solution:
+        mov     esi, edi
+        xor     eax, eax
+        mov     edi, OFFSET FLAT:.LC0
+        sal     esi, 5
+        jmp     printf
+Answer: It used the shift operation (sal esi, 5) instead of multiplication by 32.
 
 Compiler Optimization Investigation:
 Answer:
+The compiler optimized both functions a and a_solution to the same assembly code.
+It used the shift operation (sal esi, 5) instead of multiplication by 32.
+The redundant instructions are removed, and only necessary instructions are kept.
 
 b) Original Code:
 unsigned c2 = 15 * c1;
-Strength Reduction Transformation:
-Answer: 
+Strength Reduction Transformation:  
+Answer: unsigned c2 = (c1 << 3) + (c1 << 2) + (c1 << 1) + c1;
 
-Circumstances for Transformation:
-Answer:
+Circumstances for Transformation: 
+Answer: If additions and shifts are cheaper than multiplication. 
 
 Assembly Code Comparison:
-Original:
-Answer:
-Transformed:
-Answer:
+Original: b:
+        mov     esi, edi
+        xor     eax, eax
+        sal     esi, 4
+        sub     esi, edi
+        mov     edi, OFFSET FLAT:.LC1
+        jmp     printf
+Answer: For b, the compiler applies strength reduction: replaces multiplication with shifts and subtraction.
+
+Transformed: b_solution:
+        imul    esi, edi, 15
+        xor     eax, eax
+        mov     edi, OFFSET FLAT:.LC1
+        jmp     printf
+Answer: For b_solution, the compiler uses direct multiplication, as this is efficient on modern processors.
 
 Compiler Optimization Investigation:
-Answer:
+Answer: The compiler with -O3 already optimizes multiplications effectively. Usually, additional manual transformations are not needed unless there are specific architectural constraints.
 
 c) Original Code:
 unsigned c2 = 96 * c1;
 Strength Reduction Transformation:
-Answer: 
+Answer: unsigned c2 = (c1 << 5) + (c1 << 2);
 
 Circumstances for Transformation:
-Answer:
+Answer: Apply the transformation (using shifts and additions) when the cost of performing shifts and additions is lower than that of a multiplication operation.
 
 Assembly Code Comparison:
-Original:
-Answer:
-Transformed:
-Answer:
+Original: c:
+        lea     esi, [rdi+rdi*2]
+        xor     eax, eax
+        mov     edi, OFFSET FLAT:.LC2
+        sal     esi, 5
+        jmp     printf
+Answer: this assembly code computes the result of multiplying rdi by 3 and then multiplying it by 32 using shift and addition operations
+Transformed:c_solution:
+        mov     eax, edi
+        sal     eax, 5
+        lea     esi, [rax+rdi*4]
+        mov     edi, OFFSET FLAT:.LC2
+        xor     eax, eax
+        jmp     printf
+Answer: 
+mov eax, edi: Copies the value from the register edi to the register eax.
+sal eax, 5: Shifts the bits left by 5 positions in the eax register, effectively multiplying its value by 32.
+lea esi, [rax+rdi*4]: Calculates the effective address by adding the contents of registers rax and rdi multiplied by 4, and loads it into the register esi.
 
 Compiler Optimization Investigation:
-Answer:
+Answer:The original c function multiplies by 96 using shifts and additions, while c_solution achieves the same with bit-shifting, a form of strength reduction. The transformation in c_solution replaces multiplication with shifts and a lea instruction. With -O3, the compiler may apply further optimizations like instruction reordering or register allocation for improved performance.
 
 d) Original Code:
 unsigned c2 = 0.125 * c1;
