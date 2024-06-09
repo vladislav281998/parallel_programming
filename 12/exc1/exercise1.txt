@@ -165,40 +165,133 @@ Compiler Optimization Investigation:
 The compiler optimized both functions a and d_solution to the same assembly code.
 
 
-f) Original Code:
+f) original:
 for (int i = 0; i < N; ++i) {
     a[i] += i / 5.3;
 }
+f:
+        push    rbp
+        mov     rax, rdi
+        lea     rbp, [rdi+8000]
+        push    rbx
+        mov     rbx, rdi
+        sub     rsp, 8
+        movdqa  xmm2, XMMWORD PTR .LC6[rip]
+        movdqa  xmm4, XMMWORD PTR .LC7[rip]
+        movapd  xmm3, XMMWORD PTR .LC8[rip]
+.L17:
+        pshufd  xmm0, xmm2, 238
+        cvtdq2pd        xmm1, xmm2
+        movupd  xmm6, XMMWORD PTR [rax]
+        add     rax, 32
+        cvtdq2pd        xmm0, xmm0
+        divpd   xmm1, xmm3
+        movupd  xmm5, XMMWORD PTR [rax-16]
+        paddd   xmm2, xmm4
+        divpd   xmm0, xmm3
+        addpd   xmm1, xmm6
+        movups  XMMWORD PTR [rax-32], xmm1
+        addpd   xmm0, xmm5
+        movups  XMMWORD PTR [rax-16], xmm0
+        cmp     rax, rbp
+        jne     .L17
+        mov     edi, OFFSET FLAT:.LC9
+        xor     eax, eax
+        call    printf
+.L18:
+        movsd   xmm0, QWORD PTR [rbx]
+        mov     edi, OFFSET FLAT:.LC10
+        mov     eax, 1
+        add     rbx, 8
+        call    printf
+        cmp     rbx, rbp
+        jne     .L18
+        add     rsp, 8
+        pop     rbx
+        pop     rbp
+        ret
 
-Strength Reduction Transformation:
-to:do
+Interpretation: The compiler optimzes the code with SIMD instructions (movupd, divpd, addpd) but still performs the division in each iteration.
 
-Circumstances for Transformation:
+strength reduced:
+double multiplier = 1.0 / 5.3;
+double accumulated = 0.0; 
 
-to:do
-Assembly Code Comparison:
-to:do
+for (int i = 0; i < N; ++i) {
+    accumulated += multiplier;
+    a[i] += accumulated;
+}
 
-Transformed version:
-to:do
+When to apply: If the cost of performing two additions is less than performing one addition and one multiplication.
 
-Compiler Optimization Investigation:
-to:do
+f_solution:
+        push    rbp
+        mov     rax, rdi
+        lea     rbp, [rdi+8000]
+        pxor    xmm0, xmm0
+        push    rbx
+        mov     rbx, rdi
+        sub     rsp, 8
+        movsd   xmm2, QWORD PTR .LC12[rip]
+.L23:
+        addsd   xmm0, xmm2
+        movsd   xmm1, QWORD PTR [rax]
+        add     rax, 8
+        addsd   xmm1, xmm0
+        movsd   QWORD PTR [rax-8], xmm1
+        cmp     rbp, rax
+        jne     .L23
+        mov     edi, OFFSET FLAT:.LC13
+        xor     eax, eax
+        call    printf
+.L24:
+        movsd   xmm0, QWORD PTR [rbx]
+        mov     edi, OFFSET FLAT:.LC10
+        mov     eax, 1
+        add     rbx, 8
+        call    printf
+        cmp     rbp, rbx
+        jne     .L24
+        add     rsp, 8
+        pop     rbx
+        pop     rbp
+        ret
+.LC15:
+        .string "g): %u\n"
 
-g) Original Code:
+Interpretation: Due to the accumulation SIMD does not really work well here. But the divion has been removed.
+
+g) original:
+c1 is of type float:
+
 float c2 = -1 * c1;
 
-Strength Reduction Transformation:
-to:do
+g:
+        xorps   xmm0, XMMWORD PTR .LC14[rip]
+        mov     edi, OFFSET FLAT:.LC15
+        mov     eax, 1
+        cvtss2sd        xmm0, xmm0
+        jmp     printf
 
-Circumstances for Transformation:
+Interpretation: The compiler already recognizes that this operation is supposed to flip the sign bit. It uses xorps, which is the most efficient way to flip the sign bit.
 
-to:do
-Assembly Code Comparison:
-to:do
+strength reduced:
+float c2;
+*(uint32_t*)&c2 = *(uint32_t*)&c1 ^ (1 << 31);
 
-Transformed version:
-to:do
+g_solution:
+        movd    eax, xmm0
+        mov     edi, OFFSET FLAT:.LC15
+        pxor    xmm0, xmm0
+        add     eax, -2147483648
+        mov     DWORD PTR [rsp-12], eax
+        mov     eax, 1
+        cvtss2sd        xmm0, DWORD PTR [rsp-12]
+        jmp     printf
 
-Compiler Optimization Investigation:
-to:do
+When to apply: If the cost of the XOR operation is less than the multiplication.
+Interpretation: The reduced version introduces unnecessary operations, namely movd and cvtss2sd: These are used to move the data between integer and floating-point registers and formats, adding overhead.
+
+
+
+
