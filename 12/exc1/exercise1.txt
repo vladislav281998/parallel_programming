@@ -1,175 +1,204 @@
-Exercise 1 (1.5 Points)
-Description:
-Optimize the execution time of a program on a scalar architecture by applying strength reduction to the following code snippets.
-
-Tasks:
-Apply strength reduction.
-State under which circumstances the transformation should be applied.
-Compare the assembly code of the original snippets with your transformation.
-Investigate how the compiler optimizes the snippets using -O3 optimization flag.
-
-Code Snippets and Strength Reduction Answers:
+Exercise 1
 
 a) Original Code:
 unsigned c2 = 32 * c1;
+
 Strength Reduction Transformation:
-Answer: c2 = c1 << 5;
+unsigned c2 = c1 << 5;
 
 Circumstances for Transformation:
-Answer: 
 The transformation should be applied if the cost of performing the bit-shift operation is less than the cost of performing the multiplication. This is typically true in most scalar architectures, as bit-shifting is a simpler and faster operation compared to multiplication.
 
 Assembly Code Comparison:
-Original: a:
         mov     esi, edi
         xor     eax, eax
         mov     edi, OFFSET FLAT:.LC0
         sal     esi, 5
         jmp     printf
-Answer: It used the shift operation (sal esi, 5) instead of multiplication by 32.
-Transformed: a_solution:
+
+It uses the shift operation (sal esi, 5) instead of multiplication by 32.
+
+Transformed version:
         mov     esi, edi
         xor     eax, eax
         mov     edi, OFFSET FLAT:.LC0
         sal     esi, 5
         jmp     printf
-Answer: It used the shift operation (sal esi, 5) instead of multiplication by 32.
+
+It uses the shift operation (sal esi, 5) instead of multiplication by 32.
 
 Compiler Optimization Investigation:
-Answer:
 The compiler optimized both functions a and a_solution to the same assembly code.
-It used the shift operation (sal esi, 5) instead of multiplication by 32.
-The redundant instructions are removed, and only necessary instructions are kept.
 
 b) Original Code:
 unsigned c2 = 15 * c1;
+
 Strength Reduction Transformation:  
-Answer: unsigned c2 = (c1 << 3) + (c1 << 2) + (c1 << 1) + c1;
+unsigned c2 = (c1 << 3) + (c1 << 2) + (c1 << 1) + c1;
 
 Circumstances for Transformation: 
-Answer: If additions and shifts are cheaper than multiplication. 
+If additions and shifts are cheaper than multiplication. 
 
 Assembly Code Comparison:
-Original: b:
         mov     esi, edi
         xor     eax, eax
         sal     esi, 4
         sub     esi, edi
         mov     edi, OFFSET FLAT:.LC1
         jmp     printf
-Answer: For b, the compiler applies strength reduction: replaces multiplication with shifts and subtraction.
 
-Transformed: b_solution:
+It replaces multiplication with shifts and subtraction.
+
+Transformed version:
         imul    esi, edi, 15
         xor     eax, eax
         mov     edi, OFFSET FLAT:.LC1
         jmp     printf
-Answer: For b_solution, the compiler uses direct multiplication, as this is efficient on modern processors.
+
+For b_solution, the compiler uses direct multiplication.
 
 Compiler Optimization Investigation:
-Answer: The compiler with -O3 already optimizes multiplications effectively. Usually, additional manual transformations are not needed unless there are specific architectural constraints.
+The compiler with -O3 already optimizes multiplications effectively. Usually, additional manual transformations are not needed unless there are specific architectural constraints.
 
 c) Original Code:
 unsigned c2 = 96 * c1;
+
 Strength Reduction Transformation:
-Answer: unsigned c2 = (c1 << 5) + (c1 << 2);
+unsigned c2 = (c1 << 6) + (c1 << 5);
 
 Circumstances for Transformation:
-Answer: Apply the transformation (using shifts and additions) when the cost of performing shifts and additions is lower than that of a multiplication operation.
+Apply the transformation (using shifts and additions) when the cost of performing shifts and additions is lower than that of a multiplication operation.
 
 Assembly Code Comparison:
-Original: c:
         lea     esi, [rdi+rdi*2]
         xor     eax, eax
         mov     edi, OFFSET FLAT:.LC2
         sal     esi, 5
         jmp     printf
-Answer: this assembly code computes the result of multiplying rdi by 3 and then multiplying it by 32 using shift and addition operations
-Transformed:c_solution:
-        mov     eax, edi
-        sal     eax, 5
-        lea     esi, [rax+rdi*4]
-        mov     edi, OFFSET FLAT:.LC2
+
+The compiler multiplies rdi by 3 and then multiplies it by 32 using shift and addition operations
+
+Transformed version:
+        imul    esi, edi, 96
         xor     eax, eax
+        mov     edi, OFFSET FLAT:.LC0
         jmp     printf
-Answer: 
-mov eax, edi: Copies the value from the register edi to the register eax.
-sal eax, 5: Shifts the bits left by 5 positions in the eax register, effectively multiplying its value by 32.
-lea esi, [rax+rdi*4]: Calculates the effective address by adding the contents of registers rax and rdi multiplied by 4, and loads it into the register esi.
+
+It now directly multiplies the values .
 
 Compiler Optimization Investigation:
-Answer:The original c function multiplies by 96 using shifts and additions, while c_solution achieves the same with bit-shifting, a form of strength reduction. The transformation in c_solution replaces multiplication with shifts and a lea instruction. With -O3, the compiler may apply further optimizations like instruction reordering or register allocation for improved performance.
+The compiler with -O3 already optimizes multiplications effectively. Usually, additional manual transformations are not needed unless there are specific architectural constraints.
 
 d) Original Code:
 unsigned c2 = 0.125 * c1;
+
 Strength Reduction Transformation:
-Answer: 
+unsigned c2 = c1 >> 3;
 
 Circumstances for Transformation:
-Answer:
+The transformation should be applied if the cost of performing the bit-shift operation is less than the cost of performing the multiplication.
 
 Assembly Code Comparison:
-Original:
-Answer:
-Transformed:
-Answer:
+        mov     edi, edi
+        pxor    xmm0, xmm0
+        xor     eax, eax
+        cvtsi2sdq       xmm0, rdi
+        mulsd   xmm0, QWORD PTR .LC3[rip]
+        mov     edi, OFFSET FLAT:.LC4
+        cvttsd2si       rsi, xmm0
+        jmp     printf
+
+It first converts the integer from rdi to a double precision floating-point and stores it in xmm0. It then ultiplies the double in xmm0 by the constant 0.125 (stored at a memory location referenced as `.LC3`). After that it converts the double precision floating-point result back to an integer.
+
+Transformed version:
+        mov     esi, edi
+        xor     eax, eax
+        mov     edi, OFFSET FLAT:.LC0
+        shr     esi, 3
+        jmp     printf
+
+Shifts the value right by 3 bits. This effectively divides the value by 8 using a very fast bit manipulation technique.
 
 Compiler Optimization Investigation:
-Answer:
+The strength reduction transformation is very effective in this case because it replaces a slower, more complex floating-point multiplication with a faster, simpler integer bit shift.
 
 e) Original Code:
 unsigned sum_fifth = 0;
 for (int i = 0; i < N / 5; ++i) {
     sum_fifth += a[5 * i];
 }
+
 Strength Reduction Transformation:
-Answer: 
+unsigned sum_fifth = 0;
+for (int index = 0, i = 0; i < N / 5; ++i, index += 5) {
+    sum_fifth += a[index];
+}
 
 Circumstances for Transformation:
-Answer:
+We avoid multiplying 5 * i in every iteration, becasue we maintain a separate variable index that starts at 0 and increments by 5 on each loop iteration. This change transforms a multiplication into a simpler addition.
 
 Assembly Code Comparison:
-Original:
-Answer:
-Transformed:
-Answer:
+.L13:
+        add     esi, DWORD PTR [rdi]
+        add     rdi, 20
+        cmp     rax, rdi
+        jne     .L13
+        mov     edi, OFFSET FLAT:.LC5
+        xor     eax, eax
+        jmp     printf
+
+It first adds the value at the memory address pointed to by `rdi` to the register `esi`, which accumulates the sum. The `add rdi, 20` instruction then advances the `rdi` pointer by 20 bytes, to point to the next fifth element of the array. The `cmp rax, rdi` compares the current pointer `rdi` with `rax`, which holds the end address of the iteration. If they are not equal, the `jne .L13` instruction causes the loop to jump back to the label `.L13`, continuing the iteration. This loop continues until the entire array is processed, summing every fifth element.
+
+Transformed version:
+.L2:
+        add     esi, DWORD PTR [rdi]
+        add     rdi, 20
+        cmp     rax, rdi
+        jne     .L2
+        mov     edi, OFFSET FLAT:.LC0
+        xor     eax, eax
+        jmp     printf
+
+The compiler sums every fifth element of an array by incrementing the pointer by 20 bytes and continues until the end of the array is reached again.
 
 Compiler Optimization Investigation:
-Answer:
+The compiler optimized both functions a and d_solution to the same assembly code.
+
 
 f) Original Code:
 for (int i = 0; i < N; ++i) {
     a[i] += i / 5.3;
 }
+
 Strength Reduction Transformation:
-Answer: 
+to:do
 
 Circumstances for Transformation:
-Answer:
 
+to:do
 Assembly Code Comparison:
-Original:
-Answer:
-Transformed:
-Answer:
+to:do
+
+Transformed version:
+to:do
 
 Compiler Optimization Investigation:
-Answer:
+to:do
 
 g) Original Code:
 float c2 = -1 * c1;
+
 Strength Reduction Transformation:
-Answer: 
+to:do
 
 Circumstances for Transformation:
-Answer:
 
+to:do
 Assembly Code Comparison:
-Original:
-Answer:
-Transformed:
-Answer:
+to:do
+
+Transformed version:
+to:do
 
 Compiler Optimization Investigation:
-Answer:
-
+to:do
