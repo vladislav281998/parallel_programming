@@ -1,5 +1,5 @@
 # List of exercise numbers
-EXERCISES = 1 2 3 4 5
+EXERCISES = 1 2 3 4 5 6 7
 
 # Compiler and flags
 CC = gcc
