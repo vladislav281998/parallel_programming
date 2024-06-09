@@ -1,5 +1,5 @@
 # List of exercise numbers
-EXERCISES = 4 5
+EXERCISES = 1 2 3 4 5
 
 # Compiler and flags
 CC = gcc
@@ -20,6 +20,6 @@ $(EXERCISES):
 	@perf stat $(PERF_FLAGS) ./$@-transformed
 
 clean:
-	rm -f $(foreach num,$(EXERCISES),$num-original $num-transformed)
+	rm -f $(foreach n,$(EXERCISES),$n-original $n-transformed)
 
 .PHONY: all clean
