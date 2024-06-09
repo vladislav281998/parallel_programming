@@ -60,14 +60,22 @@ for (int i = 0; i < N; ++i) {
     sum_b += b[i];
     sum_c += c[i];
 }
+
 Transformation (Loop Fission/Distribution):
-Answer: 
+for (int i = 0; i < N; ++i) {
+    sum_a += a[i];
+}
+
+for (int i = 0; i < N; ++i) {
+    sum_b += b[i];
+}
+
+for (int i = 0; i < N; ++i) {
+    sum_c += c[i];
+}
 
 Performance Comparison:
-Original Code Counters:
-Answer:
-Transformed Code Counters:
-Answer:
+The transformation through loop fission has slightly increased the execution time and the number of page faults, but improved the instructions per cycle and decreased the branch miss rate. This indicates a trade-off where the transformed code, despite running slightly longer, uses CPU cycles more effectively and has a more predictable branching pattern.
 
 5) Apply loop peeling and loop fusion/combination:
 Original Code:
@@ -78,14 +86,18 @@ for (int i = 1; i < N; ++i) {
 for (int i = 0; i < N; ++i) {
     sum += a[i];
 }
+
 Transformation (Loop Peeling and Fusion):
-Answer: 
+int min = a[0];
+sum += a[0];
+
+for (int i = 1; i < N; ++i) {
+    min = (a[i] < min) ? a[i] : min;
+    sum += a[i];
+}
 
 Performance Comparison:
-Original Code Counters:
-Answer:
-Transformed Code Counters:
-Answer:
+The transformation through loop peeling and fusion, intended to reduce the number of loop iterations by combining operations, resulted in a marginal increase in execution time and resource usage. The slightly lower instructions per cycle and increased stall rates suggest that this particular fusion might not be beneficial in terms of performance for the given operations.
 
 6) Apply loop splitting:
 Original Code:

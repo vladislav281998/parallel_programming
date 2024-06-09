@@ -1,0 +1,98 @@
+gcc -O3 4-original.c -o 4-original
+gcc -O3 4-transformed.c -o 4-transformed
+Profiling 4-original...
+Sum A: 10000000, Sum B: 20000000, Sum C: 30000000
+
+ Performance counter stats for './4-original':
+
+             61.94 msec task-clock:u              #    0.969 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+              1236      page-faults:u             #   19.955 K/sec                  
+         106048551      cycles:u                  #    1.712 GHz                      (82.24%)
+         166532433      stalled-cycles-frontend:u #  157.03% frontend cycles idle     (83.74%)
+         157252496      stalled-cycles-backend:u  #  148.28% backend cycles idle      (67.73%)
+          36334868      instructions:u            #    0.34  insn per cycle         
+                                                  #    4.58  stalled cycles per insn  (83.88%)
+           5175052      branches:u                #   83.549 M/sec                    (83.85%)
+              2984      branch-misses:u           #    0.06% of all branches          (82.43%)
+
+       0.063949190 seconds time elapsed
+
+       0.023636000 seconds user
+       0.038424000 seconds sys
+
+
+Profiling 4-transformed...
+Sum A: 10000000, Sum B: 20000000, Sum C: 30000000
+
+ Performance counter stats for './4-transformed':
+
+             63.69 msec task-clock:u              #    0.969 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+              1745      page-faults:u             #   27.398 K/sec                  
+         104074761      cycles:u                  #    1.634 GHz                      (82.73%)
+         165399946      stalled-cycles-frontend:u #  158.92% frontend cycles idle     (82.76%)
+         158177961      stalled-cycles-backend:u  #  151.98% backend cycles idle      (66.49%)
+          51835381      instructions:u            #    0.50  insn per cycle         
+                                                  #    3.19  stalled cycles per insn  (83.74%)
+          10178121      branches:u                #  159.808 M/sec                    (84.30%)
+              3236      branch-misses:u           #    0.03% of all branches          (83.72%)
+
+       0.065734215 seconds time elapsed
+
+       0.030867000 seconds user
+       0.032813000 seconds sys
+
+
+gcc -O3 5-original.c -o 5-original
+gcc -O3 5-transformed.c -o 5-transformed
+Profiling 5-original...
+Min: 0, Sum: 49995000
+
+ Performance counter stats for './5-original':
+
+              0.59 msec task-clock:u              #    0.252 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+                54      page-faults:u             #   90.871 K/sec                  
+            609920      cycles:u                  #    1.026 GHz                    
+           1627605      stalled-cycles-frontend:u #  266.86% frontend cycles idle   
+           1489448      stalled-cycles-backend:u  #  244.20% backend cycles idle    
+            250024      instructions:u            #    0.41  insn per cycle         
+                                                  #    6.51  stalled cycles per insn
+             54563      branches:u                #   91.818 M/sec                  
+     <not counted>      branch-misses:u                                               (0.00%)
+
+       0.002354550 seconds time elapsed
+
+       0.000000000 seconds user
+       0.001591000 seconds sys
+
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+Profiling 5-transformed...
+Min: 0, Sum: 49995000
+
+ Performance counter stats for './5-transformed':
+
+              0.66 msec task-clock:u              #    0.266 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+                53      page-faults:u             #   80.322 K/sec                  
+            634741      cycles:u                  #    0.962 GHz                      (96.60%)
+           1764296      stalled-cycles-frontend:u #  277.96% frontend cycles idle   
+           1615242      stalled-cycles-backend:u  #  254.47% backend cycles idle    
+            245023      instructions:u            #    0.39  insn per cycle         
+                                                  #    7.20  stalled cycles per insn
+             52062      branches:u                #   78.901 M/sec                  
+                 0      branch-misses:u           #    0.00% of all branches          (3.40%)
+
+       0.002484443 seconds time elapsed
+
+       0.000000000 seconds user
+       0.001719000 seconds sys
