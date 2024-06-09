@@ -228,3 +228,81 @@ Min: 0, Sum: 49995000
 
        0.000000000 seconds user
        0.001719000 seconds sys
+
+
+ Performance counter stats for './loop_f':
+
+          7,745.62 msec task-clock:u              #    1.000 CPUs utilized
+                 0      context-switches:u        #    0.000 /sec
+                 0      cpu-migrations:u          #    0.000 /sec
+         2,133,599      page-faults:u             #  275.459 K/sec
+     8,835,966,711      cycles:u                  #    1.141 GHz                      (83.33%)
+    19,310,915,059      stalled-cycles-frontend:u #  218.55% frontend cycles idle     (83.33%)
+    17,483,363,707      stalled-cycles-backend:u  #  197.87% backend cycles idle      (66.67%)
+    10,248,793,443      instructions:u            #    1.16  insn per cycle
+                                                  #    1.88  stalled cycles per insn  (83.33%)
+     2,251,994,836      branches:u                #  290.744 M/sec                    (83.33%)
+             1,481      branch-misses:u           #    0.00% of all branches          (83.33%)
+
+       7.747097232 seconds time elapsed
+
+       2.974627000 seconds user
+       4.670113000 seconds sys
+
+
+ Performance counter stats for './loop_f_transform':
+
+          8,997.73 msec task-clock:u              #    1.000 CPUs utilized
+                 0      context-switches:u        #    0.000 /sec
+                 0      cpu-migrations:u          #    0.000 /sec
+         2,133,594      page-faults:u             #  237.126 K/sec
+    12,467,562,617      cycles:u                  #    1.386 GHz                      (83.33%)
+    24,325,455,724      stalled-cycles-frontend:u #  195.11% frontend cycles idle     (83.33%)
+    23,414,772,799      stalled-cycles-backend:u  #  187.81% backend cycles idle      (66.66%)
+     6,252,351,254      instructions:u            #    0.50  insn per cycle
+                                                  #    3.89  stalled cycles per insn  (83.33%)
+       501,722,511      branches:u                #   55.761 M/sec                    (83.34%)
+             5,220      branch-misses:u           #    0.00% of all branches          (83.34%)
+
+       8.999158957 seconds time elapsed
+
+       4.229387000 seconds user
+       4.649114000 seconds sys
+
+ Performance counter stats for './loop_g':
+
+             43.36 msec task-clock:u              #    0.977 CPUs utilized
+                 0      context-switches:u        #    0.000 /sec
+                 0      cpu-migrations:u          #    0.000 /sec
+             5,923      page-faults:u             #  136.595 K/sec
+        88,471,702      cycles:u                  #    2.040 GHz                      (82.30%)
+        55,660,544      stalled-cycles-frontend:u #   62.91% frontend cycles idle     (83.87%)
+        51,208,752      stalled-cycles-backend:u  #   57.88% backend cycles idle      (67.72%)
+       135,443,616      instructions:u            #    1.53  insn per cycle
+                                                  #    0.41  stalled cycles per insn  (83.86%)
+        36,175,773      branches:u                #  834.278 M/sec                    (83.86%)
+            16,499      branch-misses:u           #    0.05% of all branches          (82.25%)
+
+       0.044399514 seconds time elapsed
+
+       0.031778000 seconds user
+       0.011924000 seconds sys
+
+
+          1,979.40 msec task-clock:u              #    0.999 CPUs utilized
+                 0      context-switches:u        #    0.000 /sec
+                 0      cpu-migrations:u          #    0.000 /sec
+             5,921      page-faults:u             #    2.991 K/sec
+     5,856,424,367      cycles:u                  #    2.959 GHz                      (83.33%)
+     4,089,048,470      stalled-cycles-frontend:u #   69.82% frontend cycles idle     (83.33%)
+     2,692,114,675      stalled-cycles-backend:u  #   45.97% backend cycles idle      (66.66%)
+     4,200,307,913      instructions:u            #    0.72  insn per cycle
+                                                  #    0.97  stalled cycles per insn  (83.33%)
+       176,978,380      branches:u                #   89.410 M/sec                    (83.34%)
+           191,930      branch-misses:u           #    0.11% of all branches          (83.35%)
+
+       1.980499005 seconds time elapsed
+
+       1.942158000 seconds user
+       0.013801000 seconds sys
+
