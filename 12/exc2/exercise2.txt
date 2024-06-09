@@ -178,14 +178,19 @@ for (int i = 0; i < N; ++i) {
         a[i] = c[i] + 5;
     }
 }
-Transformation (Loop Splitting):
-Answer: 
+for (int i = 0; i < N; i += 2) {
+        a[i] = c[i] + 5;
+    }
+for (int i = 1; i < N; i += 2) {
+        a[i] = b[i + 1] + 4;
+    }
 
-Performance Comparison:
-Original Code Counters:
-Answer:
-Transformed Code Counters:
-Answer:
+Interpretation: Loop splitting may not be as beneficial here, because in each loop we only access every other element.
+This reduces the cache efficiency of both loops.
+
+
+Perf result. The loop splitting version is actually detrimental to performance. This may be due to the cache inefficiency mentioned above, and also the introduced overhead from having two loops.
+Also the compiler may have already applied branch prediction optimizations to the original loop.
 
 7) Apply loop tiling (a, b, and c are of type double):
 Original Code:
@@ -196,12 +201,23 @@ for (int i = 0; i < N; ++i) {
         }
     }
 }
-Transformation (Loop Tiling):
-Answer: 
+transformed:
+for (int ii = 0; ii < N; ii += BLOCK_SIZE) {
+        for (int jj = 0; jj < N; jj += BLOCK_SIZE) {
+            for (int kk = 0; kk < N; kk += BLOCK_SIZE) {
+                for (int i = ii; i < ii + BLOCK_SIZE && i < N; i++) {
+                    for (int j = jj; j < jj + BLOCK_SIZE && j < N; j++) {
+                        for (int k = kk; k < kk + BLOCK_SIZE && k < N; k++) {
+                            c[i][j] += a[i][k] * b[k][j];
+                        }
+                    }
+                }
+            }
+        }
+    }
+Interpretation: The improvement of better cache locality may be offset by the additional loop iterations.
 
-Performance Comparison:
-Original Code Counters:
-Answer:
-Transformed Code Counters:
-Answer:
+Perf result: The transformed version is significantly slower and executed far more instructions. Changing the BLOCK_SIZE did not increase the performance significantly.
+the transformed version has significantly more cache-references, and even though the % of cache misses is much improved, the total number of cache misses is still a lot higher.
+
 
