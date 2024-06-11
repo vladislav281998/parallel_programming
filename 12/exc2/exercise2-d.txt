@@ -1,0 +1,222 @@
+1) Apply loop unrolling:
+Original Code:
+for (int i = 0; i < N - 1; ++i) {
+    a[i] = b[i] + b[i + 1];
+}
+
+Transformation (Loop Unrolling):
+int bt; 
+for (int i = 0; i < N - 1; i+=2) {
+    bt = b[i+1];
+    a[i] = b[i] + bt;
+    a[i+1] = bt + b[i+2];
+}
+
+Performance Comparison:
+Original Code Counters:
+Task Clock: 0.72 msec
+Cycles: 388,488
+Stalled Cycles Frontend: 2,032,230
+Stalled Cycles Backend: 1,957,718
+Instructions: 159,402
+Branches: 33,476
+Branch Misses: 2,532
+
+Transformed Code Counters:
+Task Clock: 0.66 msec
+Cycles: 529,169
+Stalled Cycles Frontend: 1,922,968
+Stalled Cycles Backend: 1,812,761
+Instructions: 159,555
+Branches: 33,500
+
+
+Loop Unrolling (1-original vs 1-transformed):
+
+During loop unrolling in 1-transformed, the approach was applied where loop iterations are increased by two per iteration. This helps reduce the number of iterations and, consequently, decrease the time spent on loop control.
+The transformed version (1-transformed) showed a slight increase in CPU utilization, likely due to the increased number of operations in the loop, but it finished faster, indicating more efficient use of CPU resources.
+
+2) Apply loop-invariant code motion (a is of type double *):
+Original Code:
+for (int i = 0; i < N; ++i) {
+    a[i] *= hypot(0.3, 0.4);
+}
+
+Transformation (Loop-Invariant Code Motion): 
+double factor = hypot(0.3, 0.4);
+for (int i = 0; i < N; ++i) {
+    a[i] *= factor;
+}
+
+Original Code Counters:
+Task Clock: 0.56 msec
+Cycles: 357,414
+Stalled Cycles Frontend: 1,595,960
+Stalled Cycles Backend: 1,499,868
+Instructions: 130,210
+Branches: 28,172
+Branch Misses: <not counted>
+
+Transformed Code Counters:
+Task Clock: 0.52 msec
+Cycles: 362,429
+Stalled Cycles Frontend: 1,461,270
+Stalled Cycles Backend: 1,391,515
+Instructions: 130,210
+Branches: 28,172
+Branch Misses: 0
+
+
+Performance Comparison:
+With loop-invariant code motion from 2-original, the invariant operation was moved outside the loop, avoiding recomputation of this operation on each loop iteration.
+The transformed version (2-transformed) demonstrated a slight decrease in CPU usage and a minor reduction in execution time, suggesting more efficient resource utilization and computation optimization.
+
+
+3) Apply loop unswitching:
+Original Code:
+for (int i = 0; i < N; ++i) {
+    if (N % 2) {
+        a[i] = b[i] + 5;
+    } else {
+        a[i] = c[i] + 5;
+    }
+}
+Transformation (Loop Unswitching):
+    if (N % 2) {
+        for (int i = 0; i < N; ++i) {
+            a[i] = b[i] + 5;
+        }
+    } else {
+        for (int i = 0; i < N; ++i) {
+            a[i] = c[i] + 5;
+        }
+    }
+
+Original Code Counters:
+Task Clock: 0.69 msec
+Cycles: 431,502
+Stalled Cycles Frontend: 1,943,332
+Stalled Cycles Backend: 1,851,059
+Instructions: 130,212
+Branches: 28,174
+Branch Misses: <not counted>
+
+
+Transformed Code Counters:
+Task Clock: 0.60 msec
+Cycles: 265,242
+Stalled Cycles Frontend: 1,680,824
+Stalled Cycles Backend: 1,613,536
+Instructions: 130,318
+Branches: 28,190
+Branch Misses: 2,052
+
+Performance Comparison:
+With loop unswitching in 3-transformed, the loop was split into two separate loops depending on the condition. This avoids condition checking on each iteration and improves branch prediction.
+The transformed version (3-transformed) showed decreased CPU usage and faster execution, indicating more efficient CPU resource utilization and more predictable branch behavior.
+
+
+4) Apply loop fission/distribution:
+Original Code:
+for (int i = 0; i < N; ++i) {
+    sum_a += a[i];
+    sum_b += b[i];
+    sum_c += c[i];
+}
+
+Transformation (Loop Fission/Distribution):
+for (int i = 0; i < N; ++i) {
+    sum_a += a[i];
+}
+
+for (int i = 0; i < N; ++i) {
+    sum_b += b[i];
+}
+
+for (int i = 0; i < N; ++i) {
+    sum_c += c[i];
+}
+
+Performance Comparison:
+The transformation through loop fission has slightly increased the execution time and the number of page faults, but improved the instructions per cycle and decreased the branch miss rate. This indicates a trade-off where the transformed code, despite running slightly longer, uses CPU cycles more effectively and has a more predictable branching pattern.
+
+5) Apply loop peeling and loop fusion/combination:
+Original Code:
+int min = a[0];
+for (int i = 1; i < N; ++i) {
+    min = (a[i] < min) ? a[i] : min;
+}
+for (int i = 0; i < N; ++i) {
+    sum += a[i];
+}
+
+Transformation (Loop Peeling and Fusion):
+int min = a[0];
+sum += a[0];
+
+for (int i = 1; i < N; ++i) {
+    min = (a[i] < min) ? a[i] : min;
+    sum += a[i];
+}
+
+Performance Comparison:
+The transformation through loop peeling and fusion, intended to reduce the number of loop iterations by combining operations, resulted in a marginal increase in execution time and resource usage. The slightly lower instructions per cycle and increased stall rates suggest that this particular fusion might not be beneficial in terms of performance for the given operations.
+
+6) Apply loop splitting:
+Original Code:
+for (int i = 0; i < N; ++i) {
+    if (i % 2) {
+        a[i] = b[i] + 4;
+    } else {
+        a[i] = c[i] + 5;
+    }
+}
+
+Transformation:
+for (int i = 0; i < N; i += 2) {
+        a[i] = c[i] + 5;
+    }
+for (int i = 1; i < N; i += 2) {
+        a[i] = b[i + 1] + 4;
+    }
+
+Interpretation: 
+Loop splitting may not be as beneficial here, because in each loop we only access every other element.This reduces the cache efficiency of both loops.
+
+
+Perf result. The loop splitting version is actually detrimental to performance. This may be due to the cache inefficiency mentioned above, and also the introduced overhead from having two loops.
+Also the compiler may have already applied branch prediction optimizations to the original loop.
+
+7) Apply loop tiling (a, b, and c are of type double):
+Original Code:
+for (int i = 0; i < N; ++i) {
+    for (int j = 0; j < N; ++j) {
+        for (int k = 0; k < N; ++k) {
+            c[i][j] = a[i][k] * b[k][j];
+        }
+    }
+}
+
+Transformation:
+for (int ii = 0; ii < N; ii += BLOCK_SIZE) {
+        for (int jj = 0; jj < N; jj += BLOCK_SIZE) {
+            for (int kk = 0; kk < N; kk += BLOCK_SIZE) {
+                for (int i = ii; i < ii + BLOCK_SIZE && i < N; i++) {
+                    for (int j = jj; j < jj + BLOCK_SIZE && j < N; j++) {
+                        for (int k = kk; k < kk + BLOCK_SIZE && k < N; k++) {
+                            c[i][j] += a[i][k] * b[k][j];
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+Interpretation: 
+The improvement of better cache locality may be offset by the additional loop iterations.
+
+Perf result: 
+The transformed version is significantly slower and executed far more instructions. Changing the BLOCK_SIZE did not increase the performance significantly.
+the transformed version has significantly more cache-references, and even though the % of cache misses is much improved, the total number of cache misses is still a lot higher.
+
+
